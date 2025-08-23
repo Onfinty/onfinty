@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">OnFiNtY</div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- Floating Background Shapes -->
     <div class="bg-shapes">
         <div class="shape"></div>
@@ -50,7 +67,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="section services">
+    <section id="services" class="section services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
@@ -74,7 +91,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section contact">
+    <section id="contact" class="section contact">
         <div class="container">
             <div class="contact-content">
                 <h2>Let's build something amazing.</h2>
@@ -97,6 +114,6 @@
         </div>
     </footer>
 
-    <script src="main.js"> </script>
+<script src="main.js"></script>
 </body>
 </html>
