@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnFiNtY Learning Platform - OnFiNtY Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">OnFiNtY</div>
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading Learning Platform project...</div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-container"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#" class="logo">OnFiNtY</a>
+            <a href="../../../../../portfolio.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1 class="page-title">OnFiNtY Learning Platform</h1>
+                <p class="page-subtitle">
+                    A modern educational landing page featuring advanced CSS animations, 3D effects, gradient design system, and interactive elements with navy, purple, and lime color scheme
+                </p>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="service-overview">
+            <div class="container">
+                <h2 class="section-title fade-in">Project Overview</h2>
+                <div class="overview-content">
+                    <div class="overview-card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="card-title">Dynamic Hero Section</h3>
+                        <p class="card-description">
+                            Full-screen hero with animated 3D graduation cap (200px circle with gradient), floating geometric shapes with 6-second animation cycles, and parallax mouse-tracking effects creating depth.
+                        </p>
+                    </div>
+                    <div class="overview-card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="card-title">Advanced CSS Animations</h3>
+                        <p class="card-description">
+                            Multiple animation layers: floating shapes with transform rotations, scroll-triggered fade-ins, tilt effects on feature cards using perspective transforms, and glow text animations with 3-second cycles.
+                        </p>
+                    </div>
+                    <div class="overview-card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="card-title">Glass Morphism Design System</h3>
+                            <p class="card-description">
+                                Cards use backdrop-filter blur effects with rgba(255,255,255,0.05) backgrounds, 1px purple borders, 20px border-radius, creating modern translucent depth effects throughout.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="screenshots-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Design Components</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-image">
+                            <i class="fas fa-laptop-code" style="font-size: 3rem; opacity: 0.3;"></i>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">3D Course Card System</h3>
+                            <p class="screenshot-description">
+                                Flip cards with transform-style: preserve-3d, 350px height, front/back faces using backface-visibility: hidden, hover effects with perspective(1000px) rotateY(7deg) transforms.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-image">
+                            <i class="fas fa-chart-bar" style="font-size: 3rem; opacity: 0.3;"></i>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Animated Statistics Section</h3>
+                            <p class="screenshot-description">
+                                Intersection Observer API triggers counter animations with 2000ms duration, step calculations, and special formatting for percentage values with purple glow text-shadow effects.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-image">
+                            <i class="fas fa-paint-brush" style="font-size: 3rem; opacity: 0.3;"></i>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Gradient Button System</h3>
+                            <p class="screenshot-description">
+                                Primary buttons use linear-gradient(135deg, #8E44FF, #6B2DC7) with 50px border-radius, box-shadow rgba(142,68,255,0.4), hover translateY(-3px) animations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-image">
+                            <i class="fas fa-rocket" style="font-size: 3rem; opacity: 0.3;"></i>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Pricing Card Layout</h3>
+                            <p class="screenshot-description">
+                                Three-column grid with featured card scale(1.05) transform, before pseudo-element badges, translateY(-10px) hover effects, and checkmark list styling with lime accents.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Technical Implementation</h2>
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Animated Statistics Counter</h3>
+                            <p>Dynamic counter animations displaying 10,000+ students, 200+ courses, and 95% satisfaction rate with scroll-triggered effects</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>3D Card Flip Effects</h3>
+                            <p>Interactive course cards with front/back flip animations showing course details, instructors, and enrollment options</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Floating Shape Animations</h3>
+                            <p>Parallax floating shapes in hero section with mouse-tracking effects and continuous rotation animations</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Gradient Design System</h3>
+                            <p>Purple and lime gradient color scheme with navy base, creating modern educational brand aesthetics</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-arrows-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Interactive Pricing Cards</h3>
+                            <p>Three-tier pricing structure with hover animations, featured plan highlighting, and ripple button effects</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Student Testimonials</h3>
+                            <p>Testimonial section featuring student success stories with animated avatars and smooth transitions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Details Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content fade-in">
+                    <h2 class="cta-title">Design & Development Details</h2>
+                    <p class="cta-description">
+                        <strong>Color Variables:</strong> --navy: #0B0F1A, --purple: #8E44FF, --lime: #A3FF12, --white: #FFFFFF, --gray: #8892B0, --dark-purple: #6B2DC7<br>
+                        <strong>Typography:</strong> Arial font-family, responsive font sizes (3.5rem hero h1, 2.5rem section titles), gradient text effects with -webkit-background-clip<br>
+                        <strong>Layout System:</strong> CSS Grid auto-fit minmax(300px, 1fr) for responsive cards, max-width containers (800px hero, 1200px sections)<br>
+                        <strong>Animation Framework:</strong> CSS @keyframes (float, pulse, slideInUp, glow), JavaScript Intersection Observer, mouse tracking parallax<br>
+                        <strong>Interactive Elements:</strong> Transform hover effects, ripple button animations, card tilt effects with mousemove calculations<br>
+                        <strong>Technical Features:</strong> Backdrop-filter blur, perspective transforms, counter animations, scroll-triggered effects<br>
+                        <strong>Mobile Responsive:</strong> @media (max-width: 768px) breakpoints, grid-template-columns: 1fr, adjusted font sizes<br>
+                        <strong>Development Time:</strong> 25-30 hours (advanced animations and interactive features)<br>
+                        <strong>Pricing:</strong> $150 - $250 (based on animation complexity and interactive feature implementation)
+                        
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="../index.html" target="_blank" class="btn btn-primary">View Live Demo</a>
+                        <a href="../../../../../portfolio.html#projects" class="btn btn-secondary">See More Projects</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
