@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://onfinty.github.io/onfinty/</loc>
+    <lastmod>2025-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- زوّد أهم الصفحات/البروجيكت -->
+  <url><loc>https://onfinty.github.io/onfinty/</loc></url>
+  <url><loc>https://onfinty.github.io/onfinty/assessts/projects/RealProjects/OnFiNtY-BASIC-Corporate/description/index.html</loc></url>
+  <url><loc>https://onfinty.github.io/onfinty/assessts/projects/RealProjects/OnFiNtY-STANDARD-Cafe/descripton%20page/index.html</loc></url>
+  <url><loc>https://onfinty.github.io/onfinty/assessts/projects/RealProjects/OnFiNtY-STANDARD-SaaS/descripton%20page/index.html</loc></url>
+</urlset>
