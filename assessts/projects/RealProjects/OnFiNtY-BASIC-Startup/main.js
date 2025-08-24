@@ -17,70 +17,53 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Smooth scrolling for CTA button
-document.querySelector('.cta-btn').addEventListener('click', function (e) {
-    if (this.getAttribute('href').startsWith('#')) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+// Smooth scrolling for CTA button and navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
-    }
+    });
 });
 
-// Improved Intersection Observer for animations
+// Intersection Observer for all sections and service cards
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-});
-
-// Staggered animation for service cards
-const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-            }, index * 200);
-        }
-    });
-}, {
-    threshold: 0.1
-});
-
-document.querySelectorAll('.service-card').forEach(card => {
-    cardObserver.observe(card);
+document.querySelectorAll('.section, .service-card').forEach(el => {
+    observer.observe(el);
 });
 
 // Parallax effect for background shapes
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const rate = scrolled * -0.5;
-
-    document.querySelector('.bg-shapes').style.transform = `translateY(${rate}px)`;
+    const shapes = document.querySelector('.bg-shapes');
+    
+    if (shapes) {
+        shapes.style.transform = `translateY(${rate}px)`;
+    }
 });
 
-// Add loading animation
+// Add loading animation on window load
 window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
+    document.body.classList.add('loaded');
 });

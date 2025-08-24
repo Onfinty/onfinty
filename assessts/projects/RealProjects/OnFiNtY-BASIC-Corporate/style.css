@@ -130,7 +130,7 @@ nav {
     line-height: 1.2;
     opacity: 0;
     transform: translateX(-50px);
-    animation: slideInLeft 1s ease forwards;
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .hero-text p {
@@ -138,7 +138,7 @@ nav {
     margin-bottom: 2rem;
     color: #64748B;
     opacity: 0;
-    animation: fadeIn 1s ease 0.5s forwards;
+    transition: opacity 1s ease 0.5s;
 }
 
 .btn {
@@ -151,7 +151,7 @@ nav {
     font-weight: 600;
     transition: var(--transition);
     opacity: 0;
-    animation: fadeIn 1s ease 1s forwards;
+    transition: opacity 1s ease 1s;
     border: 2px solid var(--orange);
 }
 
@@ -169,7 +169,7 @@ nav {
     align-items: center;
     opacity: 0;
     padding: 10px;
-    animation: fadeIn 1s ease 0.7s forwards;
+    transition: opacity 1s ease 0.7s;
 }
 
 .placeholder-img img {
@@ -206,6 +206,7 @@ nav {
     margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(30px);
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .services-grid {
@@ -223,6 +224,7 @@ nav {
     transition: var(--transition);
     opacity: 0;
     transform: translateY(30px);
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .service-card:hover {
@@ -233,6 +235,14 @@ nav {
 .service-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.service-icon svg {
+    width: 3rem;
+    height: 3rem;
+    color: var(--orange);
 }
 
 .service-card h3 {
@@ -262,7 +272,8 @@ nav {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     margin-bottom: 2rem;
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(-30px);
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .about-features {
@@ -274,7 +285,8 @@ nav {
     align-items: center;
     margin-bottom: 1rem;
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(-30px);
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .about-features li::before {
@@ -296,7 +308,8 @@ nav {
     opacity: 0;
     width: 100%;
     border-radius: 20px;
-    transform: translateX(-30px);
+    transform: translateX(30px);
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .about-image img {
@@ -320,12 +333,14 @@ nav {
     margin-bottom: 2rem;
     opacity: 0;
     transform: translateY(30px);
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .cta .btn {
     background: var(--orange);
     opacity: 0;
     transform: translateY(30px);
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 /* Footer */
@@ -389,32 +404,10 @@ footer {
 }
 
 /* Animations */
-@keyframes slideInLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-.fade-in {
+.is-visible {
     opacity: 1 !important;
+    transform: translateX(0) !important;
     transform: translateY(0) !important;
-}
-
-.slide-in-left {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
-}
-
-.slide-in-right {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
 }
 
 /* Responsive Design */

@@ -1,17 +1,26 @@
-
+// Function to show page with fade-in effect
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
 
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
+// Check for saved theme preference on load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+}
+
 themeToggle.addEventListener('click', () => {
-    if (body.getAttribute('data-theme') === 'dark') {
-        body.removeAttribute('data-theme');
-        themeToggle.textContent = '🌙';
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        themeToggle.textContent = '☀️';
-    }
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    body.setAttribute('data-theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', newTheme);
 });
 
 // Navbar scroll effect
@@ -24,46 +33,33 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Scroll reveal animation
+// Scroll reveal animation using Intersection Observer
 const reveals = document.querySelectorAll('.reveal');
-const featureCards = document.querySelectorAll('.feature-card');
+const featuresCards = document.querySelectorAll('.feature-card');
 
-function revealElements() {
-    reveals.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (elementTop < windowHeight - 100) {
-            element.classList.add('active');
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
         }
     });
-
-    // Animate feature cards with stagger
-    featureCards.forEach((card, index) => {
-        const cardTop = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (cardTop < windowHeight - 100) {
-            setTimeout(() => {
-                card.classList.add('animate');
-            }, index * 100);
-        }
-    });
-}
-
-// Product image parallax effect
-const productImage = document.querySelector('.product-image');
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-
-    if (productImage) {
-        productImage.style.transform = `translateY(calc(-50% + ${rate}px))`;
-    }
 });
 
-window.addEventListener('scroll', revealElements);
-window.addEventListener('load', revealElements);
+reveals.forEach(element => revealObserver.observe(element));
+
+const featuresObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+featuresCards.forEach(card => {
+    featuresObserver.observe(card);
+});
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -37,37 +37,27 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            if (entry.target.classList.contains('features')) {
-                entry.target.classList.add('animated');
-                const featureCards = entry.target.querySelectorAll('.feature-card');
-                featureCards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('animated');
-                    }, index * 200);
-                });
-            } else {
-                entry.target.classList.add('animated');
-            }
+            entry.target.classList.add('animated');
+            // Stop observing once the element is visible to prevent re-triggering
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe sections for scroll animations
-document.querySelectorAll('.features, .about, .cta-section').forEach(section => {
-    observer.observe(section);
+// Observe elements for animation
+document.querySelectorAll('.hero, .features, .feature-card, .about, .cta-section').forEach(el => {
+    observer.observe(el);
 });
 
-// Header scroll effect
+// Header scroll effect - fixed background color issue
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > 100) {
         header.style.background = 'rgba(249, 249, 249, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
     } else {
         header.style.background = 'var(--light-bg)';
-        header.style.backdropFilter = 'blur(10px)';
     }
 });

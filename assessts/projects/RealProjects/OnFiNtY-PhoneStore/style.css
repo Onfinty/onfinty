@@ -31,6 +31,11 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: all 0.5s ease;
+    opacity: 0;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 /* Navigation */
@@ -96,6 +101,7 @@ body {
     padding: 0.5rem;
     border-radius: 50%;
     transition: background 0.3s ease;
+    color: var(--text-primary);
 }
 
 .theme-toggle:hover {
@@ -304,6 +310,7 @@ body {
     font-size: 3rem;
     margin-bottom: 1rem;
     display: block;
+    color: var(--accent-blue);
 }
 
 .feature-card h4 {
@@ -437,4 +444,5 @@ body {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+    animation: none;
 }

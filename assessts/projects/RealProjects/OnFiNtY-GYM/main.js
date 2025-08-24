@@ -1,9 +1,9 @@
-
-// Animated particles background
+// Function to create and animate background particles
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
-    const particleCount = 50;
+    if (!particlesContainer) return;
 
+    const particleCount = 50;
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
@@ -13,6 +13,24 @@ function createParticles() {
         particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
         particlesContainer.appendChild(particle);
     }
+}
+
+// Mobile menu functionality
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
 }
 
 // Smooth scrolling for navigation links
@@ -29,23 +47,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll animations
-function handleScrollAnimations() {
-    const elements = document.querySelectorAll('.fade-in');
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
+// Intersection Observer for fade-in animations and counter
+const observerOptions = {
+    threshold: 0.1
+};
 
-        if (elementTop < window.innerHeight - elementVisible) {
-            element.classList.add('visible');
+const fadeObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
         }
     });
-}
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+    fadeObserver.observe(el);
+});
 
 // Counter animation
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            counterObserver.unobserve(entry.target);
+        }
+    });
+});
+
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
-
     counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
         const increment = target / 100;
@@ -63,78 +94,53 @@ function animateCounters() {
     });
 }
 
-// Testimonial slider
+document.querySelectorAll('.stats').forEach(stat => {
+    counterObserver.observe(stat);
+});
+
+// Testimonial slider with navigation
 function initTestimonialSlider() {
     const slider = document.getElementById('testimonialSlider');
     const testimonials = slider.children;
+    const navContainer = document.getElementById('testimonialNav');
     let currentIndex = 0;
+
+    for (let i = 0; i < testimonials.length; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('testimonial-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            currentIndex = i;
+            updateSlider();
+        });
+        navContainer.appendChild(dot);
+    }
+
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
 
     setInterval(() => {
         currentIndex = (currentIndex + 1) % testimonials.length;
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateSlider();
     }, 5000);
 }
 
 // Cursor glow effect
 function initCursorGlow() {
-    const cursor = document.createElement('div');
-    cursor.style.cssText = `
-                position: fixed;
-                width: 20px;
-                height: 20px;
-                background: radial-gradient(circle, rgba(0, 216, 255, 0.3), transparent);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 9999;
-                transition: all 0.1s ease;
-            `;
-    document.body.appendChild(cursor);
+    const cursor = document.querySelector('.custom-cursor');
+    if (!cursor) return;
 
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX - 10 + 'px';
-        cursor.style.top = e.clientY - 10 + 'px';
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
     });
 }
 
-// Initialize everything when page loads
-window.addEventListener('load', () => {
-    createParticles();
-    initTestimonialSlider();
-    initCursorGlow();
-
-    // Trigger counter animation when stats section is visible
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    });
-
-    document.querySelectorAll('.stats').forEach(stat => {
-        statsObserver.observe(stat);
-    });
-});
-
-// Handle scroll events
-window.addEventListener('scroll', handleScrollAnimations);
-
-// Initial call for elements already in view
-handleScrollAnimations();
-
-// Add dynamic button interactions
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mouseenter', function () {
-        this.style.transform = 'translateY(-3px) scale(1.05)';
-    });
-
-    btn.addEventListener('mouseleave', function () {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// Add click ripple effect to buttons
+// Ripple effect for buttons
 document.querySelectorAll('.btn, .book-btn, .pulse-btn').forEach(button => {
     button.addEventListener('click', function (e) {
         const ripple = document.createElement('span');
@@ -144,17 +150,17 @@ document.querySelectorAll('.btn, .book-btn, .pulse-btn').forEach(button => {
         const y = e.clientY - rect.top - size / 2;
 
         ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s ease-out;
-                    pointer-events: none;
-                `;
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+        `;
 
         this.style.position = 'relative';
         this.style.overflow = 'hidden';
@@ -166,14 +172,9 @@ document.querySelectorAll('.btn, .book-btn, .pulse-btn').forEach(button => {
     });
 });
 
-// Add CSS for ripple animation
-const style = document.createElement('style');
-style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-document.head.appendChild(style);
+// Initialize all functions on page load
+window.addEventListener('load', () => {
+    createParticles();
+    initTestimonialSlider();
+    initCursorGlow();
+});

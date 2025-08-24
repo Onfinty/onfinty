@@ -128,7 +128,7 @@ body {
     font-weight: bold;
     margin-bottom: 20px;
     background: linear-gradient(135deg, var(--white), var(--lime));
-    -webkit-background-clip: text;
+    
     -webkit-text-fill-color: transparent;
 }
 

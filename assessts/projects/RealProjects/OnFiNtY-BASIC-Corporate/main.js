@@ -12,55 +12,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for animations
+// Intersection Observer for animations - streamlined
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const element = entry.target;
+            element.classList.add('is-visible'); // Use a generic class to show the element
 
-            if (element.classList.contains('section-title')) {
-                element.classList.add('fade-in');
-            }
-
-            if (element.classList.contains('service-card')) {
-                setTimeout(() => {
-                    element.classList.add('fade-in');
-                }, Array.from(element.parentNode.children).indexOf(element) * 200);
-            }
-
-            if (element.classList.contains('about-text')) {
-                element.querySelector('h2').classList.add('slide-in-left');
-                const features = element.querySelectorAll('.about-features li');
-                features.forEach((feature, index) => {
-                    setTimeout(() => {
-                        feature.classList.add('slide-in-left');
-                    }, index * 150);
-                });
-            }
-
-            if (element.classList.contains('about-image')) {
-                element.classList.add('slide-in-right');
-            }
-
-            if (element.classList.contains('cta')) {
-                setTimeout(() => {
-                    element.querySelector('h2').classList.add('fade-in');
-                }, 200);
-                setTimeout(() => {
-                    element.querySelector('.btn').classList.add('fade-in');
-                }, 400);
-            }
+            // Stop observing once the element is visible
+            observer.unobserve(element);
         }
     });
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.section-title, .service-card, .about-text, .about-image, .cta, img').forEach(el => {
+document.querySelectorAll('.hero-text h1, .hero-text p, .hero-text .btn, .hero-image, .section-title, .service-card, .about-text h2, .about-features li, .about-image, .cta h2, .cta .btn').forEach(el => {
     observer.observe(el);
 });
 
