@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnFiNtY Product Landing Page - OnFiNtY Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">OnFiNtY</div>
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading Product Landing Page project...</div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-container"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#" class="logo">OnFiNtY</a>
+            <a href="../../../../../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1 class="page-title">OnFiNtY Product Landing Page</h1>
+                <p class="page-subtitle">
+                    Apple-inspired minimalist product landing page featuring advanced theme switching, scroll animations, and clean typography with "Think Beyond" branding
+                </p>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="service-overview">
+            <div class="container">
+                <h2 class="section-title fade-in">Project Overview</h2>
+                <div class="overview-content">
+                    <div class="overview-card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="card-title">Dual Theme System</h3>
+                        <p class="card-description">
+                            Dynamic light/dark theme toggle using CSS custom properties with seamless transitions. White/black primary backgrounds with blue accent (#0071e3) maintaining Apple's design language.
+                        </p>
+                    </div>
+                    <div class="overview-card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="card-title">Minimalist Product Showcase</h3>
+                        <p class="card-description">
+                            Clean product presentation with alternating highlight sections, gradient placeholder images, and focused typography emphasizing performance, elegance, and future innovation.
+                        </p>
+                    </div>
+                    <div class="overview-card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="card-title">Advanced Scroll Animations</h3>
+                            <p class="card-description">
+                                Intersection Observer-based reveal animations with staggered feature card entrances, parallax effects, and smooth scroll-triggered transparency changes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="screenshots-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Design Components</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-image">
+                            <i class="fas fa-layer-group" style="font-size: 3rem; opacity: 0.3;"></i>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Fixed Navigation with Backdrop Filter</h3>
+                            <p class="screenshot-description">
+                                Glassmorphism navigation bar with backdrop-filter: blur(20px), dynamic scrolled state with box-shadow, and smooth theme transitions affecting border colors.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-image">
+                            <i class="fas fa-text-height" style="font-size: 3rem; opacity: 0.3;"></i>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Responsive Typography System</h3>
+                            <p class="screenshot-description">
+                                Clamp-based fluid typography (clamp(3rem, 8vw, 6rem) for hero title) with Inter font stack, staggered fadeInUp animations at 0.5s, 0.7s, 0.9s intervals.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-image">
+                            <i class="fas fa-grip-horizontal" style="font-size: 3rem; opacity: 0.3;"></i>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Alternating Grid Layout System</h3>
+                            <p class="screenshot-description">
+                                CSS Grid auto-fit minmax(300px, 1fr) for highlight sections, alternating content/image positioning, 400px height gradient placeholders with 20px border-radius.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-image">
+                            <i class="fas fa-video" style="font-size: 3rem; opacity: 0.3;"></i>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Video Showcase Section</h3>
+                            <p class="screenshot-description">
+                                Full-width inverted section (text-primary background), centered 450px video placeholder with play button overlay, demonstrating content hierarchy inversion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Technical Implementation</h2>
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>CSS Custom Properties Theme System</h3>
+                            <p>Root variables with data-theme="dark" attribute toggling, smooth 0.5s transitions on body element</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Intersection Observer Animations</h3>
+                            <p>Reveal class system with translateY(50px) initial state, staggered feature card animations with 100ms delays</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-arrows-alt-v"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Parallax Scroll Effects</h3>
+                            <p>Window scroll event listeners with rate calculations, translateY transforms on scroll for depth perception</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-mouse-pointer"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Interactive Button States</h3>
+                            <p>TranslateY(-2px) hover effects, box-shadow with color opacity, 25px border-radius pill buttons</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Mobile-First Responsive Design</h3>
+                            <p>768px breakpoint with flexbox direction changes, navigation menu hiding, footer layout stacking</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Smooth Scroll Navigation</h3>
+                            <p>Anchor link behavior: 'smooth' with preventDefault event handling and scrollIntoView API implementation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Details Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content fade-in">
+                    <h2 class="cta-title">Design & Development Details</h2>
+                    <p class="cta-description">
+                        <strong>Color Variables:</strong> Light theme: --bg-primary: #ffffff, --text-primary: #000000, --accent-blue: #0071e3; Dark theme: --bg-primary: #000000, --text-primary: #ffffff<br>
+                        <strong>Typography:</strong> Inter font family with Apple system font fallbacks, fluid clamp() sizing, 300-700 font weights, 1.6 line-height<br>
+                        <strong>Layout Architecture:</strong> CSS Grid auto-fit responsive cards, flexbox navigation, max-width 1200px containers, 2rem horizontal padding<br>
+                        <strong>Animation Framework:</strong> @keyframes fadeInUp with opacity/translateY transforms, Intersection Observer for scroll triggers, staggered delays<br>
+                        <strong>Interactive Elements:</strong> Theme toggle with emoji switching (moon/sun), hover transforms, backdrop-filter glassmorphism effects<br>
+                        <strong>Product Features:</strong> Ultra Performance (A17 Pro chip), Sleek Design (titanium/glass), Battery Life, Pro Camera System, 5G Connectivity<br>
+                        <strong>Technical Complexity:</strong> Advanced CSS custom properties, JavaScript event handling, scroll optimization, responsive breakpoints<br>
+                        <strong>Development Time:</strong> 15-20 hours (clean code architecture and animation implementation)<br>
+                        <strong>Pricing Range:</strong> $120 - $200 (Apple-inspired minimalist design with advanced theming system)
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="../index.html" target="_blank" class="btn btn-primary">View Live Demo</a>
+                        <a href="../../../../../index.html#projects" class="btn btn-secondary">See More Projects</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

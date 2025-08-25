@@ -186,11 +186,6 @@ header {
     overflow: hidden;
 }
 
-.hero-image::before {
-    content: '☕';
-    font-size: 8rem;
-    opacity: 0.2;
-}
 
 /* Glow Button Effect */
 .glow-button {
@@ -215,15 +210,6 @@ header {
     overflow: hidden;
 }
 
-.glow-button::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--bg);
-    z-index: 2;
-    border-radius: 1rem;
-    border: 1px solid hsla(var(--hue), 30%, 30%, 0.3);
-}
 
 .glow-button span {
     background: var(--glow), var(--text-primary);
@@ -238,11 +224,7 @@ header {
     letter-spacing: 0.1ch;
 }
 
-.glow-button:hover {
-    --size: 150px;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px hsla(var(--hue), 60%, 50%, 0.3);
-}
+
 
 .glow-button:active {
     --size: 200px;
@@ -261,9 +243,7 @@ header {
     transition: opacity 0.3s ease;
 }
 
-.glow-button:hover::after {
-    opacity: 0.7;
-}
+
 
 /* Sections */
 .section {
