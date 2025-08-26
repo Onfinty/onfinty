@@ -91,7 +91,7 @@ musicToggle.addEventListener('click', () => {
 });
 
 // Set initial volume
-backgroundMusic.volume = 0.3;
+backgroundMusic.volume = 0.7;
 
 // Header scroll effect
 const header = document.getElementById('header');
