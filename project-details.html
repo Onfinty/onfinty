@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEFTXV73KV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EEFTXV73KV');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Details | OnFiNtY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div id="particles-container"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">OnFiNtY</a>
+            <nav class="nav" id="nav">
+                <a href="index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Hero -->
+    <section class="section hero-small">
+        <div class="container" style="padding-top: 8rem;">
+            <div class="section-header fade-in">
+                <div class="section-tag" id="detailCategory">CATEGORY</div>
+                <h1 class="section-title" id="detailTitle">Project Title</h1>
+                <div class="project-tech" id="detailTech" style="justify-content: center;">
+                    <!-- Tech tags loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Content -->
+    <section class="section" id="project-details">
+        <div class="container">
+
+            <!-- Long Description & Features -->
+            <div class="project-details-grid">
+                <div class="details-content fade-in">
+                    <h3>About the Project</h3>
+                    <p id="detailDescription" class="text-lg">
+                        Loading project details...
+                    </p>
+
+                    <div style="margin-top: 2.5rem;">
+                        <a href="#" id="externalLink" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-github"></i> View Source / Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="details-features fade-in">
+                    <h3>Key Features</h3>
+                    <ul class="features-list" id="featuresList">
+                        <!-- Features loaded dynamically -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="gallery-section">
+                <h3 class="section-title-small fade-in">Visual Tour</h3>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Images loaded dynamically -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div class="call-to-action fade-in">
+                <h2>Like what you see?</h2>
+                <p>Let's discuss how we can bring similar quality to your project.</p>
+                <a href="index.html#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">
+                &copy; 2025 <span>OnFiNtY</span>. Made with Kyrillos • All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <button class="music-btn" id="musicBtn" aria-label="Toggle Music">
+            <i class="fas fa-music"></i>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="assets/projects/One last glance.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
