@@ -1,136 +1,93 @@
 // Projects Data Configuration
 const projects = [
     {
-        id: "todo-app",
-        icon: '<i class="fas fa-tasks"></i>',
-        category: "PRODUCTION APP",
-        title: "Advanced Todo Application",
-        description: "Feature-rich task management system with 7 dynamic themes, complete English/Arabic localization with RTL support, custom widget library, and smooth animations throughout.",
-        longDescription: "This advanced todo application represents a comprehensive approach to task management. Built with Flutter, it emphasizes user experience through fluid animations and a customizable interface. The app supports multiple languages including full RTL layouts for Arabic, making it accessible to a global audience. The architecture uses Hive for local storage ensures offline capability and instant load times.",
+        id: "login-ui-trilogy",
+        icon: '<i class="fas fa-layer-group"></i>',
+        category: "UI/UX DESIGN SHOWCASE",
+        title: "Triple Threat Login Screens",
+        description: "Three distinct login experiences showcasing different design philosophies - from sleek minimalism to luxurious glassmorphism.",
+        longDescription: "This project is a playground of login screen aesthetics, featuring three completely different approaches to user authentication interfaces. Each design tells its own story and creates a unique emotional connection with users. Whether you prefer the mysterious allure of dark themes, the fresh optimism of light designs, or the futuristic elegance of glassmorphism, this collection has you covered. Built with Flutter's most powerful animation and styling capabilities, each screen is production-ready and fully responsive.",
         features: [
-            "7 Dynamic Themes with Dark Mode support",
-            "Complete English & Arabic Localization (RTL)",
-            "Custom Widget Library for consistent UI",
-            "Local Storage with Hive DB",
-            "Smooth Hero Animations and Transitions"
+            "Three Complete Design Systems - Dark, Light, and Glassmorphic themes",
+            "Buttery Smooth Animations - Using flutter_animate for professional transitions",
+            "Pixel-Perfect Responsive Design - Looks amazing on every device size",
+            "Custom Reusable Components - Clean architecture for easy maintenance",
+            "Interactive Micro-Interactions - Focus states, hover effects, and delightful feedback",
+            "Form Validation Logic - Real-world authentication handling",
+            "Gradient & Shadow Mastery - Advanced visual depth techniques",
+            "Production-Ready Code - Clean, documented, and scalable"
+        ],
+        designs: [
+            {
+                name: "Dark Mode Elegance",
+                file: "dark.dart",
+                description: "The Batman of login screens - sleek, sophisticated, and a little mysterious. This design embraces the dark side with a pure black background and crisp white accents. Features a minimalist approach where every pixel has a purpose.",
+                highlights: [
+                    "Pure Black (#121212) background for OLED perfection",
+                    "White-on-black high contrast for accessibility",
+                    "Subtle radial gradient that whispers, not shouts",
+                    "Floating white button that practically begs to be clicked",
+                    "Inter font family for that 'I mean business' look",
+                    "Animated entrance effects that make users go 'ooh'",
+                    "Focus states that glow like a lightsaber (but classier)",
+                    "Perfect for: Late-night coding sessions and cybersecurity apps"
+                ]
+            },
+            {
+                name: "Light Mode Delight",
+                file: "light.dart",
+                description: "The friendly neighborhood login screen that greets you with a smile. Soft colors, rounded everything, and a general vibe of 'hey, come on in!' This is what happens when minimalism meets personality.",
+                highlights: [
+                    "Soft off-white (#F8F9FD) that's easy on the eyes",
+                    "Indigo accent color (#4F46E5) for that pop of confidence",
+                    "Super-rounded inputs (20px radius!) for maximum friendliness",
+                    "Waving hand icon because who doesn't love a good greeting?",
+                    "Social login buttons styled like little clouds",
+                    "Poppins font that says 'I'm modern but approachable'",
+                    "Hover effects that lift elements like magic carpets",
+                    "Perfect for: Lifestyle apps, social platforms, and anything fun"
+                ]
+            },
+            {
+                name: "Glassmorphism Premium",
+                file: "login.dart",
+                description: "The showstopper. The one that makes other login screens jealous. This design uses glassmorphism (frosted glass effect) with glowing orbs and premium animations. It's like logging into a spaceship's control panel, but user-friendly.",
+                highlights: [
+                    "Frosted glass card with BackdropFilter blur (sigma 15!)",
+                    "Ambient glowing orbs that float in the background",
+                    "Multi-layer gradient background that creates depth",
+                    "Shimmer effect on buttons (yes, really)",
+                    "Password visibility toggle with smooth icon transitions",
+                    "Form validation with elegant error states",
+                    "Mock authentication with loading states",
+                    "Perfect for: Premium apps, crypto wallets, and showing off"
+                ]
+            }
+        ],
+        technologies: ["Flutter", "Dart", "flutter_animate", "flutter_screenutil", "Glassmorphism", "Material Design", "Google Fonts"],
+        technicalDetails: [
+            "Responsive Design: Uses flutter_screenutil for consistent sizing across devices",
+            "Animation Library: flutter_animate for declarative, chainable animations",
+            "State Management: StatefulWidget with clean separation of concerns",
+            "Custom Widgets: Reusable components for consistency and maintainability",
+            "Typography: Google Fonts integration (Inter, Poppins, JetBrains Mono)",
+            "Color Theory: Carefully chosen palettes for each theme",
+            "Accessibility: High contrast ratios and proper focus indicators",
+            "Performance: Optimized animations with 60fps target"
         ],
         images: [
-            { url: "assets/black2.png", desc: "Main Dashboard View" },
-            { url: "assets/preview.png", desc: "Task Management Interface" },
-            { url: "assets/black.png", desc: "Settings and Theme Selection" }
+            { url: "assets/login1.png", desc: "Dark Mode - The Minimalist Masterpiece" },
+            { url: "assets/login2.png", desc: "Light Mode - Fresh and Friendly" },
+            { url: "assets/login3.png", desc: "Glassmorphism - The Premium Experience" }
         ],
-        technologies: ["Flutter", "UI Design", "Animations", "Theming"],
-        link: "https://github.com/Onfinty"
-    },
-    {
-        id: "weather-app",
-        icon: '<i class="fas fa-cloud-sun"></i>',
-        category: "UI IMPLEMENTATION",
-        title: "Real-Time Weather App",
-        description: "Beautiful weather application featuring adaptive layouts, glassmorphism effects, dynamic weather animations, and responsive design for all screen sizes.",
-        longDescription: "A visually stunning weather application that brings atmospheric data to life. Utilizing modern glassmorphism design trends, the app presents complex meteorological data in a clean, digestible format. It features dynamic background animations that reflect the current weather conditions, providing an immersive user experience.",
-        features: [
-            "Real-time API Integration",
-            "Glassmorphism UI Design",
-            "Dynamic Weather Animations",
-            "Geolocation Services",
-            "7-Day Forecast Visualization"
-        ],
-        images: [
-            { url: "assets/black2.png", desc: "Current Weather Display" },
-            { url: "assets/preview.png", desc: "Forecast List View" }
-        ],
-        technologies: ["Flutter", "Glassmorphism", "Rive", "Responsive"],
-        link: "https://github.com/Onfinty"
-    },
-    {
-        id: "chat-ui",
-        icon: '<i class="fas fa-comments"></i>',
-        category: "MESSAGING UI",
-        title: "Chat Interface Design",
-        description: "Modern messaging interface featuring fluid message bubbles, media previews, seamless keyboard transitions, and intuitive gesture-based navigation.",
-        longDescription: "An exploration of modern chat interfaces, focusing on the subtle details that make messaging feel natural. This project implements advanced sliver scrolling, hero animations for media viewing, and swipe gestures for reply/delete actions. It demonstrates high-fidelity replication of top-tier messaging apps.",
-        features: [
-            "Fluid Message Bubbles",
-            "Interactive Media Previews",
-            "Seamless Keyboard Handling",
-            "Gesture-based Navigation",
-            "Hero Animations for Images"
-        ],
-        images: [
-            { url: "assets/black2.png", desc: "Chat Conversation View" },
-            { url: "assets/preview.png", desc: "Media Gallery" }
-        ],
-        technologies: ["Flutter", "Micro-interactions", "Hero Animations", "Gestures"],
-        link: "https://github.com/Onfinty"
-    },
-    {
-        id: "ecommerce-app",
-        icon: '<i class="fas fa-shopping-cart"></i>',
-        category: "E-COMMERCE",
-        title: "Modern Shopping Experience",
-        description: "Premium e-commerce interface with parallax product showcasing, advanced filtering interactions, shopping cart animations, and smooth checkout flow.",
-        longDescription: "A premium shopping experience designed to convert. This app features a complex product catalog with advanced filtering capabilities. The UI uses parallax effects for product showcases and micro-interactions for the cart additions, making the shopping journey engaging and delightful.",
-        features: [
-            "Parallax Product Showcase",
-            "Advanced Filtering System",
-            "Animated Shopping Cart",
-            "Smooth Checkout Flow",
-            "Wishlist Management"
-        ],
-        images: [
-            { url: "assets/black2.png", desc: "Product Discovery Page" },
-            { url: "assets/preview.png", desc: "Product Details & Cart" }
-        ],
-        technologies: ["Flutter", "Slivers", "Complex UI", "Payment Flow"],
-        link: "https://github.com/Onfinty"
-    },
-    {
-        id: "fitness-tracker",
-        icon: '<i class="fas fa-dumbbell"></i>',
-        category: "HEALTH & FITNESS",
-        title: "Fitness Tracker UI",
-        description: "Comprehensive fitness dashboard with interactive charts, progress rings, workout timer animations, and sleek dark mode implementation.",
-        longDescription: "A data-driven fitness companion that visualizes personal health goals. Using custom painters and charting libraries, this app renders complex health data into beautiful, easy-to-read graphs and rings. The dark mode implementation ensures comfortable viewing during late-night workouts.",
-        features: [
-            "Interactive Charts & Graphs",
-            "Progress Rings with Custom Painters",
-            "Workout Timer Animations",
-            "Sleek Dark Mode",
-            "Activity History Tracking"
-        ],
-        images: [
-            { url: "assets/black2.png", desc: "Activity Dashboard" },
-            { url: "assets/preview.png", desc: "Workout Session View" }
-        ],
-        technologies: ["Flutter", "Data Viz", "Custom Painters", "Dark Mode"],
-        link: "https://github.com/Onfinty"
-    },
-    {
-        id: "widget-library",
-        icon: '<i class="fas fa-code"></i>',
-        category: "OPEN SOURCE",
-        title: "Custom Widget Library",
-        description: "Production-ready design system with 50+ reusable components. Includes buttons, inputs, dialogs, and loaders designed for consistency and scalability.",
-        longDescription: "A robust set of reusable Flutter widgets designed to accelerate development. This library encapsulates common UI patterns and atomic components, ensuring design consistency across applications. It follows a strict design system with configurable themes and properties.",
-        features: [
-            "50+ Reusable Components",
-            "Themable Architecture",
-            "Comprehensive Documentation",
-            "Input Validation Wrappers",
-            "Loading State Indicators"
-        ],
-        images: [
-            { url: "assets/black2.png", desc: "Component Gallery" },
-            { url: "assets/preview.png", desc: "Typography & Color System" }
-        ],
-        technologies: ["Design System", "components", "Documentation", "MIT License"],
         link: "https://github.com/Onfinty"
     }
 ];
 
+
 // Helper to determine page type
 const isDetailsPage = window.location.pathname.includes('project-details.html');
+const isStartProjectPage = window.location.pathname.includes('start-project.html');
 
 // Render Projects (Index Page)
 function renderProjects() {
@@ -219,6 +176,42 @@ function loadProjectDetails() {
             </div>
         `).join('');
     }
+
+    // Render Design Breakdown Cards
+    if (project.designs) {
+        const designCardsGrid = document.getElementById('designCardsGrid');
+        if (designCardsGrid) {
+            designCardsGrid.innerHTML = project.designs.map((design, idx) => `
+            <div class="design-card fade-in" style="transition-delay: ${idx * 0.15}s">
+                <div class="design-card-header">
+                    <div class="design-number">${idx + 1}</div>
+                    <h4>${design.name}</h4>
+                </div>
+                <div class="design-file">${design.file}</div>
+                <p>${design.description}</p>
+                <ul class="highlights-list">
+                    ${design.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                </ul>
+            </div>
+        `).join('');
+        }
+    }
+
+    // Render Technical Details
+    if (project.technicalDetails) {
+        const technicalGrid = document.getElementById('technicalGrid');
+        if (technicalGrid) {
+            technicalGrid.innerHTML = project.technicalDetails.map((detail, idx) => {
+                const [title, description] = detail.split(':');
+                return `
+                <div class="technical-item fade-in" style="transition-delay: ${idx * 0.1}s">
+                    <strong>${title}</strong>
+                    <span>${description}</span>
+                </div>
+            `;
+            }).join('');
+        }
+    }
 }
 
 // Typing Animation
@@ -286,6 +279,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Page specific logic
     if (isDetailsPage) {
         loadProjectDetails();
+    } else if (isStartProjectPage) {
+        initMultiStepForm();
     } else {
         // Index page logic
         const typingTitle = document.getElementById('typingTitle');
@@ -312,8 +307,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
-
-// Header scroll effect
 const header = document.getElementById('header');
 if (header) {
     window.addEventListener('scroll', () => {
@@ -423,4 +416,196 @@ if (window.matchMedia("(min-width: 992px)").matches) {
         el.addEventListener('mouseenter', () => cursor.style.transform = 'translate(-50%, -50%) scale(1.8)');
         el.addEventListener('mouseleave', () => cursor.style.transform = 'translate(-50%, -50%) scale(1)');
     });
+}
+
+// Multi-step Form Logic
+function initMultiStepForm() {
+    const form = document.getElementById('projectForm');
+    if (!form) return;
+
+    const steps = document.querySelectorAll('.form-step');
+    const stepIndicators = document.querySelectorAll('.step');
+    const stepLines = document.querySelectorAll('.step-line');
+    let currentStep = 1;
+
+    // Next Buttons
+    document.querySelectorAll('.next-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                if (currentStep < steps.length) {
+                    currentStep++;
+                    updateForm();
+                }
+            }
+        });
+    });
+
+    // Prev Buttons
+    document.querySelectorAll('.prev-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateForm();
+            }
+        });
+    });
+
+    // Validation
+    function validateStep(stepIndex) {
+        const currentStepEl = document.querySelector(`.form-step[data-index="${stepIndex}"]`);
+        const inputs = currentStepEl.querySelectorAll('input[required], textarea[required]');
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (!input.checkValidity()) {
+                isValid = false;
+                input.reportValidity();
+                // Shake effect
+                input.closest('.input-group')?.classList.add('shake');
+                setTimeout(() => input.closest('.input-group')?.classList.remove('shake'), 500);
+            }
+        });
+
+        // Specific checks for checkboxes/radios if needed
+        if (stepIndex === 1) {
+            const checked = currentStepEl.querySelector('input[name="work_type"]:checked');
+            if (!checked) {
+                alert('Please select at least one work type.');
+                isValid = false;
+            }
+        }
+
+        return isValid;
+    }
+
+    // Update UI
+    function updateForm() {
+        // Steps
+        steps.forEach(step => {
+            step.classList.remove('active');
+            if (parseInt(step.dataset.index) === currentStep) {
+                step.classList.add('active');
+            }
+        });
+
+        // Indicators
+        stepIndicators.forEach(indicator => {
+            const stepNum = parseInt(indicator.dataset.step);
+            indicator.classList.remove('active', 'completed');
+            if (stepNum === currentStep) {
+                indicator.classList.add('active');
+            } else if (stepNum < currentStep) {
+                indicator.classList.add('completed');
+                indicator.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                indicator.innerText = stepNum;
+            }
+        });
+
+        // Lines
+        stepLines.forEach((line, idx) => {
+            line.classList.remove('active');
+            if (idx < currentStep - 1) {
+                line.classList.add('active');
+            }
+        });
+
+        // Scroll to top of form
+        document.querySelector('.form-header').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Submission
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (!validateStep(currentStep)) return;
+
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        btn.disabled = true;
+
+        // Collect Data
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            // Handle multiple checkboxes
+            if (data[key]) {
+                if (!Array.isArray(data[key])) {
+                    data[key] = [data[key]];
+                }
+                data[key].push(value);
+            } else {
+                data[key] = value;
+            }
+        });
+
+        // Real Implementation:
+        console.log("🚀 Sending Project Data:", data); // Debug Log
+        if (!data.user_email) console.error("⚠️ CRITICAL: user_email is missing or empty!");
+
+        // Send Admin Notification (To You)
+        const sendAdmin = emailjs.send("service_fr0ds6h", "template_yj6kehu", data);
+
+        // Send Client Confirmation (To Client) 
+        const sendClient = emailjs.send("service_fr0ds6h", "template_hhmqz5n", data);
+
+        // Wait for both
+        Promise.all([sendAdmin, sendClient])
+            .then(function () {
+                console.log("✅ Both emails sent successfully!");
+                form.style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                confettiEffect();
+            })
+            .catch(function (error) {
+                console.error("❌ Email Error:", error);
+
+                // If at least one failed, we still show success if it's likely just the client one failing due to bad config
+                // regarding the 'mixed results', but usually Promise.all rejects if one fails.
+                // For UX, we might want to alert if the ADMIN one fails specifically. 
+                // But simple approach:
+                alert("Something went wrong sending the data. Please try again or email directly.");
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
+
+    });
+}
+
+// Simple Confetti
+function confettiEffect() {
+    const container = document.querySelector('.form-wrapper');
+    const colors = ['#8b5cf6', '#a78bfa', '#ffffff'];
+
+    for (let i = 0; i < 50; i++) {
+        const conf = document.createElement('div');
+        conf.style.cssText = `
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            animation: pop ${0.5 + Math.random()}s ease-out forwards;
+            transform: rotate(${Math.random() * 360}deg);
+        `;
+
+        // Random trajectory
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = 100 + Math.random() * 100;
+        const tx = Math.cos(angle) * velocity;
+        const ty = Math.sin(angle) * velocity;
+
+        conf.animate([
+            { transform: 'translate(-50%, -50%)', opacity: 1 },
+            { transform: `translate(${tx}px, ${ty}px)`, opacity: 0 }
+        ], {
+            duration: 1000,
+            easing: 'cubic-bezier(0, .9, .57, 1)',
+        });
+
+        container.appendChild(conf);
+        setTimeout(() => conf.remove(), 1000);
+    }
 }

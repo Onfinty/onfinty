@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEFTXV73KV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EEFTXV73KV');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Start Your Project - OnFiNtY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("NsPRLyaaInyBXGrOT");
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div id="particles-container"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">OnFiNtY</a>
+            <nav class="nav" id="nav">
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="section form-section">
+        <div class="container">
+            <div class="form-wrapper fade-in">
+                <div class="form-header">
+                    <h2 class="section-title">Let's Build Your App</h2>
+                    <div class="progress-bar-container">
+                        <div class="progress-steps">
+                            <div class="step active" data-step="1">1</div>
+                            <div class="step-line"></div>
+                            <div class="step" data-step="2">2</div>
+                            <div class="step-line"></div>
+                            <div class="step" data-step="3">3</div>
+                            <div class="step-line"></div>
+                            <div class="step" data-step="4">4</div>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="projectForm" class="multi-step-form">
+                    <!-- Step 1: Work Type -->
+                    <div class="form-step active" data-index="1">
+                        <h3 class="step-title">What are we building?</h3>
+                        <div class="card-options-grid">
+                            <label class="card-option">
+                                <input type="checkbox" name="work_type" value="Mobile App UI">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                                    <span>Mobile App UI</span>
+                                </div>
+                            </label>
+                            <label class="card-option">
+                                <input type="checkbox" name="work_type" value="Login/Auth Screens">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-lock"></i></div>
+                                    <span>Login/Auth Screens</span>
+                                </div>
+                            </label>
+                            <label class="card-option">
+                                <input type="checkbox" name="work_type" value="UI Design Only">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-paint-brush"></i></div>
+                                    <span>UI Design Only</span>
+                                </div>
+                            </label>
+                            <label class="card-option">
+                                <input type="checkbox" name="work_type" value="UI + Flutter">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                                    <span>UI + Flutter Implementation</span>
+                                </div>
+                            </label>
+                            <label class="card-option">
+                                <input type="checkbox" name="work_type" value="Redesign">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-sync-alt"></i></div>
+                                    <span>Redesign App</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-nav">
+                            <button type="button" class="btn btn-primary next-btn">Next <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Design Style -->
+                    <div class="form-step" data-index="2">
+                        <h3 class="step-title">Choose a style vibe</h3>
+                        <div class="card-options-grid three-col">
+                            <label class="card-option">
+                                <input type="radio" name="design_style" value="Dark Mode Elegance">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-moon"></i></div>
+                                    <span>Dark Mode Elegance</span>
+                                    <small>Based on my portfolio design</small>
+                                </div>
+                            </label>
+                            <label class="card-option">
+                                <input type="radio" name="design_style" value="Light Friendly Design">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-sun"></i></div>
+                                    <span>Light Friendly Design</span>
+                                    <small>Based on my portfolio design</small>
+                                </div>
+                            </label>
+                            <label class="card-option">
+                                <input type="radio" name="design_style" value="Glassmorphism Premium">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                                    <span>Glassmorphism Premium</span>
+                                    <small>Based on my portfolio design</small>
+                                </div>
+                            </label>
+                            <label class="card-option full-width">
+                                <input type="radio" name="design_style" value="Custom">
+                                <div class="card-content">
+                                    <div class="card-icon"><i class="fas fa-magic"></i></div>
+                                    <span>I want something new & custom</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-nav">
+                            <button type="button" class="btn btn-secondary prev-btn"><i class="fas fa-arrow-left"></i>
+                                Back</button>
+                            <button type="button" class="btn btn-primary next-btn">Next <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Project Details -->
+                    <div class="form-step" data-index="3">
+                        <h3 class="step-title">Tell me more details</h3>
+                        <div class="input-group">
+                            <label>Project Name (Optional)</label>
+                            <input type="text" name="project_name" placeholder="e.g. Super App">
+                        </div>
+                        <div class="input-group">
+                            <label>App Concept / Description</label>
+                            <textarea name="project_desc" rows="4"
+                                placeholder="Describe your idea briefly..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Examples you like? (Optional)</label>
+                            <input type="text" name="examples" placeholder="e.g. Airbnb, Spotify...">
+                        </div>
+                        <div class="input-group">
+                            <label>Approx. Deadline (Optional)</label>
+                            <input type="text" name="deadline" placeholder="e.g. 1 month">
+                        </div>
+                        <p class="hint-text"><i class="fas fa-info-circle"></i> These details are preliminary.</p>
+                        <div class="form-nav">
+                            <button type="button" class="btn btn-secondary prev-btn"><i class="fas fa-arrow-left"></i>
+                                Back</button>
+                            <button type="button" class="btn btn-primary next-btn">Next <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Communication -->
+                    <div class="form-step" data-index="4">
+                        <h3 class="step-title">How can I reach you?</h3>
+                        <div class="input-group">
+                            <label>Your Name (Optional)</label>
+                            <input type="text" name="user_name" placeholder="John Doe">
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" name="user_email" placeholder="john@example.com" required>
+                        </div>
+                        <label class="checkbox-simple">
+                            <input type="checkbox" required>
+                            <span>I understand this is a project inquiry, not a final quote.</span>
+                        </label>
+                        <div class="form-nav">
+                            <button type="button" class="btn btn-secondary prev-btn"><i class="fas fa-arrow-left"></i>
+                                Back</button>
+                            <button type="submit" class="btn btn-primary">Send Project Details <i
+                                    class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Thanks! I’ve received your project details.</h3>
+                    <p>I’ll review everything and get back to you shortly.</p>
+                    <a href="index.html" class="btn btn-secondary">Return Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">
+                &copy; 2026 <span>OnFiNtY</span>. Made By Kyrillos Sameh • All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <button class="music-btn" id="musicBtn" aria-label="Toggle Music">
+            <i class="fas fa-music"></i>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="assets/projects/One last glance.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

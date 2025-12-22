@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Project Signal</title>
+    <style>
+        /* Reset */
+        body,
+        table,
+        td,
+        div,
+        p,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            /* Tech/Code vibe */
+        }
+
+        table {
+            border-collapse: collapse !important;
+            width: 100%;
+        }
+
+        /* Cosmic Theme Colors */
+        .bg-deep {
+            background-color: #050505;
+        }
+
+        .bg-card {
+            background-color: #0f1014;
+        }
+
+        .text-neon {
+            color: #a78bfa;
+        }
+
+        .text-white {
+            color: #eeeeee;
+        }
+
+        .text-dim {
+            color: #888888;
+        }
+
+        .border-neon {
+            border: 1px solid #3b3b4f;
+        }
+
+        .accent-glow {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
+        }
+
+        /* Components */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #050505;
+        }
+
+        .header-bar {
+            background: linear-gradient(90deg, #4c1d95 0%, #000000 100%);
+            padding: 4px;
+        }
+
+        .status-badge {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            display: inline-block;
+        }
+
+        .data-grid {
+            width: 100%;
+            border: 1px solid #1f1f23;
+        }
+
+        .data-label {
+            background-color: #0f1014;
+            color: #8b5cf6;
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 12px;
+            width: 30%;
+            vertical-align: top;
+            border-bottom: 1px solid #1f1f23;
+            border-right: 1px solid #1f1f23;
+            letter-spacing: 1px;
+        }
+
+        .data-value {
+            background-color: #0a0a0c;
+            color: #e2e8f0;
+            padding: 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #1f1f23;
+            line-height: 1.5;
+        }
+
+        .scan-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #a78bfa;
+            text-decoration: none;
+            border-bottom: 1px dotted #a78bfa;
+        }
+    </style>
+</head>
+
+<body style="background-color: #000000;">
+
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#000000">
+        <tr>
+            <td align="center">
+
+                <!-- Main Container -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600"
+                    style="max-width: 600px; background-color: #050505; margin: 20px auto; border: 1px solid #1f1f23; border-radius: 8px; overflow: hidden; box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);">
+
+                    <!-- Top Accent -->
+                    <tr>
+                        <td class="header-bar" style="height: 4px;"></td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td style="padding: 30px 30px 20px 30px; border-bottom: 1px solid #1f1f23;">
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <p
+                                            style="color:#8b5cf6; font-size: 10px; letter-spacing: 2px; margin-bottom: 5px;">
+                                            INCOMING TRANSMISSION</p>
+                                        <h1
+                                            style="color: #ffffff; font-size: 20px; font-weight: 300; margin: 0; letter-spacing: 1px;">
+                                            NEW_PROJECT_SIGNAL</h1>
+                                    </td>
+                                    <td align="right">
+                                        <span class="status-badge">● SECURE</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td style="padding: 30px;">
+
+                            <!-- Client Widget -->
+                            <p
+                                style="color: #6d7f9c; font-size: 10px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px;">
+                                // CLIENT_IDENTITY_MODULE</p>
+                            <table class="data-grid" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="data-label">OPERATOR NAME</td>
+                                    <td class="data-value">{{user_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">CONTACT UPLINK</td>
+                                    <td class="data-value" style="color:#a78bfa;">{{user_email}}</td>
+                                </tr>
+                            </table>
+
+                            <br><br>
+
+                            <!-- Project Widget -->
+                            <p
+                                style="color: #6d7f9c; font-size: 10px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px;">
+                                // PROJECT_SPEC_MODULE</p>
+                            <table class="data-grid" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="data-label">MISSION CLASS</td>
+                                    <td class="data-value">{{work_type}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">VISUAL PROTOCOL</td>
+                                    <td class="data-value">{{design_style}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">CODENAME</td>
+                                    <td class="data-value">{{project_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">TIMEFRAME</td>
+                                    <td class="data-value">{{deadline}}</td>
+                                </tr>
+                            </table>
+
+                            <br><br>
+
+                            <!-- Description Console -->
+                            <p
+                                style="color: #6d7f9c; font-size: 10px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px;">
+                                // DECRYPTED_BRIEF_DATA</p>
+                            <div
+                                style="background-color: #0f1014; padding: 15px; border-left: 2px solid #8b5cf6; color: #d1d5db; font-size: 13px; line-height: 1.6;">
+                                <span style="color:#4b5563;">> 读取中...</span><br>
+                                {{project_desc}}
+                            </div>
+
+                            <br>
+
+                            <!-- Examples -->
+                            <div
+                                style="background-color: #0a0a0c; padding: 12px; border: 1px dashed #1f1f23; color: #888;">
+                                <span style="color:#a78bfa; font-size:11px;">REF:</span> <span
+                                    style="font-size:12px;">{{examples}}</span>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center"
+                            style="padding: 20px; background-color: #0a0a0c; border-top: 1px solid #1f1f23;">
+                            <p style="color: #4b5563; font-size: 10px; letter-spacing: 1px;">SYSTEM_ID:
+                                ONFINTY_PORTFOLIO_V2.4</p>
+                            <p style="color: #4b5563; font-size: 10px; margin-top:5px;">END_OF_TRANSMISSION</p>
+                        </td>
+                    </tr>
+
+                    <!-- Scanline Effect -->
+                    <tr>
+                        <td class="scan-line" style="height: 1px;"></td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
