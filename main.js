@@ -1,66 +1,119 @@
+// ============================================
+// 🎄 CHRISTMAS MODE TOGGLE 🎄
+// Set to false to disable Christmas decorations
+// ============================================
+const ENABLE_CHRISTMAS_MODE = true;
+
 // Projects Data Configuration
 const projects = [
     {
         id: "login-ui-trilogy",
         icon: '<i class="fas fa-layer-group"></i>',
         category: "UI/UX DESIGN SHOWCASE",
-        title: "Triple Threat Login Screens",
-        description: "Three distinct login experiences showcasing different design philosophies - from sleek minimalism to luxurious glassmorphism.",
-        longDescription: "This project is a playground of login screen aesthetics, featuring three completely different approaches to user authentication interfaces. Each design tells its own story and creates a unique emotional connection with users. Whether you prefer the mysterious allure of dark themes, the fresh optimism of light designs, or the futuristic elegance of glassmorphism, this collection has you covered. Built with Flutter's most powerful animation and styling capabilities, each screen is production-ready and fully responsive.",
+        title: "Triple Threat Auth Kit",
+        description: "Six spectacular authentication screens from 'The Triple Threat Auth Kit' - where logging in meets luxury. Three themes, six screens, infinite style.",
+        longDescription: "Welcome to The Triple Threat Auth Kit - not your grandma's login forms (unless she's incredibly cool). This collection of 6 production-ready Flutter screens features three distinct design philosophies: Dark Mode (for the mysterious types), Light Mode (for the optimists), and Glassmorphism (for the show-offs). Each theme comes with both a sleek login screen and its trusty signup companion. Built with Flutter's most powerful animation libraries and enough visual polish to make designers cry happy tears. Whether you're building the next big SaaS, a crypto wallet that needs to look expensive, or just want authentication screens that spark joy, this kit has you covered. It's like getting three complete UI kits in one - because why settle for boring when you can have spectacular?",
         features: [
-            "Three Complete Design Systems - Dark, Light, and Glassmorphic themes",
-            "Buttery Smooth Animations - Using flutter_animate for professional transitions",
-            "Pixel-Perfect Responsive Design - Looks amazing on every device size",
-            "Custom Reusable Components - Clean architecture for easy maintenance",
-            "Interactive Micro-Interactions - Focus states, hover effects, and delightful feedback",
-            "Form Validation Logic - Real-world authentication handling",
-            "Gradient & Shadow Mastery - Advanced visual depth techniques",
-            "Production-Ready Code - Clean, documented, and scalable"
+            "Three Complete Design Systems - Dark, Light, and Glassmorphic themes that actually look different",
+            "Six Full Screens - Login AND Signup for each theme (no half-measures here)",
+            "Buttery Smooth Animations - Using flutter_animate because janky is not in our vocabulary",
+            "Pixel-Perfect Responsive Design - Looks stunning on everything from watches to tablets",
+            "Custom Reusable Components - Clean architecture that future-you will thank present-you for",
+            "Interactive Micro-Interactions - Focus states, hover effects, and feedback that feels good",
+            "Smart Form Validation - Password matching, email checking, and gentle error messages",
+            "Visual Depth Mastery - Gradients, shadows, glassmorphism, and enough blur to make your GPU sweat",
+            "Production-Ready Code - Clean, commented, scalable, and actually documented",
+            "The Triple Threat Auth Kit™ - Authentication has never looked this good"
         ],
         designs: [
             {
-                name: "Dark Mode Elegance",
-                file: "dark.dart",
-                description: "The Batman of login screens - sleek, sophisticated, and a little mysterious. This design embraces the dark side with a pure black background and crisp white accents. Features a minimalist approach where every pixel has a purpose.",
+                name: "🌑 Dark Mode Elegance",
+                file: "triple-threat-auth-kit/dark.dart",
+                description: "The Batman of login screens - sleek, sophisticated, and a little mysterious. This design embraces the dark side with a pure black background and crisp white accents. Features a minimalist approach where every pixel has a purpose. Basically, if Steve Jobs designed a login screen at 3am.",
                 highlights: [
                     "Pure Black (#121212) background for OLED perfection",
-                    "White-on-black high contrast for accessibility",
-                    "Subtle radial gradient that whispers, not shouts",
+                    "White-on-black high contrast that your optometrist would approve",
+                    "Subtle radial gradient that whispers sweet nothings",
                     "Floating white button that practically begs to be clicked",
                     "Inter font family for that 'I mean business' look",
                     "Animated entrance effects that make users go 'ooh'",
                     "Focus states that glow like a lightsaber (but classier)",
-                    "Perfect for: Late-night coding sessions and cybersecurity apps"
+                    "Perfect for: Late-night coding sessions, cybersecurity apps, and brooding dramatically"
                 ]
             },
             {
-                name: "Light Mode Delight",
-                file: "light.dart",
-                description: "The friendly neighborhood login screen that greets you with a smile. Soft colors, rounded everything, and a general vibe of 'hey, come on in!' This is what happens when minimalism meets personality.",
+                name: "☀️ Light Mode Delight",
+                file: "triple-threat-auth-kit/light.dart",
+                description: "The friendly neighborhood login screen that greets you with a smile and probably offers you cookies. Soft colors, rounded everything, and a general vibe of 'hey, come on in!' This is what happens when minimalism meets personality and they become best friends.",
                 highlights: [
-                    "Soft off-white (#F8F9FD) that's easy on the eyes",
-                    "Indigo accent color (#4F46E5) for that pop of confidence",
-                    "Super-rounded inputs (20px radius!) for maximum friendliness",
-                    "Waving hand icon because who doesn't love a good greeting?",
-                    "Social login buttons styled like little clouds",
-                    "Poppins font that says 'I'm modern but approachable'",
-                    "Hover effects that lift elements like magic carpets",
-                    "Perfect for: Lifestyle apps, social platforms, and anything fun"
+                    "Soft off-white (#F8F9FD) that's easier on the eyes than morning sunlight",
+                    "Indigo accent color (#4F46E5) for that pop of 'I got this' confidence",
+                    "Super-rounded inputs (20px radius!) for maximum huggability",
+                    "Waving hand icon (👋) because who doesn't love a warm greeting?",
+                    "Social login buttons styled like fluffy clouds you want to poke",
+                    "Poppins font that says 'I'm modern but I'll still help you move apartments'",
+                    "Hover effects that lift elements like magic carpets on vacation",
+                    "Perfect for: Lifestyle apps, social platforms, and making your grandma say 'Oh, how nice!'"
                 ]
             },
             {
-                name: "Glassmorphism Premium",
-                file: "login.dart",
-                description: "The showstopper. The one that makes other login screens jealous. This design uses glassmorphism (frosted glass effect) with glowing orbs and premium animations. It's like logging into a spaceship's control panel, but user-friendly.",
+                name: "✨ Glassmorphism Premium",
+                file: "triple-threat-auth-kit/glass.dart",
+                description: "The showstopper. The one that makes other login screens jealous at parties. This design uses glassmorphism (frosted glass effect) with glowing orbs and premium animations. It's like logging into a spaceship's control panel designed by Apple's design team, but actually user-friendly. Might cause jaw drops.",
                 highlights: [
-                    "Frosted glass card with BackdropFilter blur (sigma 15!)",
-                    "Ambient glowing orbs that float in the background",
-                    "Multi-layer gradient background that creates depth",
-                    "Shimmer effect on buttons (yes, really)",
-                    "Password visibility toggle with smooth icon transitions",
-                    "Form validation with elegant error states",
-                    "Mock authentication with loading states",
-                    "Perfect for: Premium apps, crypto wallets, and showing off"
+                    "Frosted glass card with BackdropFilter blur (sigma 15 - yes, we're showing off)",
+                    "Ambient glowing orbs that float around like they own the place",
+                    "Multi-layer gradient background that creates more depth than a philosophy textbook",
+                    "Shimmer effect on buttons (yes, really - we went there)",
+                    "Password visibility toggle with smooth icon transitions that feel buttery",
+                    "Form validation with elegant error states (even errors look good here)",
+                    "Mock authentication with loading states that make waiting pleasant",
+                    "Perfect for: Premium apps, crypto wallets, impressing your tech lead, and showing off at conferences"
+                ]
+            },
+            {
+                name: "🌑 Dark Signup Companion",
+                file: "triple-threat-auth-kit/signup_dark.dart",
+                description: "The sophisticated sibling of Dark Mode Login. Where the login screen is 'Welcome back, friend,' this one is 'Hello there, future legend.' Four fields instead of two because good things take time. Same mysterious Batman vibes, now with extra commitment.",
+                highlights: [
+                    "All the dark elegance of its login twin, but longer (it's not you, it's the extra form fields)",
+                    "Four beautifully animated input fields: Name, Email, Password, Confirm Password",
+                    "Password matching validation that gently reminds you when you typo",
+                    "Same pure black aesthetic that makes night owls feel at home",
+                    "Smooth animations that distract you from the fact you're filling out a form",
+                    "Minimal design that says 'we respect your time but need your info'",
+                    "'Create Account' button that glows with entrepreneurial energy",
+                    "Perfect for: Building your empire, starting fresh, joining the dark side (we have cookies)"
+                ]
+            },
+            {
+                name: "☀️ Light Signup Friend",
+                file: "triple-threat-auth-kit/signup_light.dart",
+                description: "The cheerful onboarding buddy that's practically throwing confetti while you type. If Light Mode Login is a friendly wave, this is a warm hug and a welcome gift basket. Four rounded input fields that look so friendly, they might send you birthday cards.",
+                highlights: [
+                    "Person-add icon instead of waving hand (it's recruitment time!)",
+                    "Same delightful pastel color palette that makes you feel good about yourself",
+                    "Four super-rounded fields with 20px corners (borderline circular, we're not judging)",
+                    "Indigo accent colors that scream confidence without actually screaming",
+                    "Smooth slide-in animations that feel like a gentle introduction",
+                    "Password confirmation field styled with the same cloud-like softness",
+                    "Validation messages delivered with a smile (metaphorically)",
+                    "Perfect for: Community apps, wellness platforms, anywhere people gather to be wholesome"
+                ]
+            },
+            {
+                name: "✨ Glass Signup Spectacular",
+                file: "triple-threat-auth-kit/signup_glass.dart",
+                description: "The crown jewel of the auth collection. The final boss of signup forms. This isn't just a registration page - it's a premium experience wrapped in frosted glass. Four fields, all the glassmorphism glory, and enough visual polish to make designers weep tears of joy. Comes with its own gravitational pull.",
+                highlights: [
+                    "Person-add-outlined icon floating majestically like a registration deity",
+                    "Full glassmorphism treatment on a FOUR-FIELD form (we're ambitious)",
+                    "BackdropFilter blur that makes everything behind it look artsy",
+                    "Two password fields with individual visibility toggles (luxury!)",
+                    "Validation that checks if passwords match before you even think about it",
+                    "Shimmer effects on the submit button because why stop at good when you can be fabulous",
+                    "Glowing ambient orbs strategically placed to frame your data entry like a masterpiece",
+                    "Perfect for: SaaS platforms, fintech apps, NFT marketplaces, or anywhere you want users to feel like VIPs"
                 ]
             }
         ],
@@ -76,9 +129,13 @@ const projects = [
             "Performance: Optimized animations with 60fps target"
         ],
         images: [
-            { url: "assets/login1.png", desc: "Dark Mode - The Minimalist Masterpiece" },
-            { url: "assets/login2.png", desc: "Light Mode - Fresh and Friendly" },
-            { url: "assets/login3.png", desc: "Glassmorphism - The Premium Experience" }
+            { url: "assets/dark.png", desc: "Dark Mode - The Minimalist Masterpiece" },
+            { url: "assets/light.png", desc: "Light Mode - Fresh and Friendly" },
+            { url: "assets/glass.png", desc: "Glassmorphism - The Premium Experience" },
+            // for the signup pages
+            { url: "assets/dark2.png", desc: "Dark Mode - The Minimalist Masterpiece" },
+            { url: "assets/light2.png", desc: "Light Mode - Fresh and Friendly" },
+            { url: "assets/glass2.png", desc: "Glassmorphism - The Premium Experience" }
         ],
         link: "https://github.com/Onfinty"
     }
@@ -271,10 +328,107 @@ function createParticles() {
     setInterval(createParticle, 3000);
 }
 
+// ============================================
+// 🔮 CHRISTMAS 2085 - NEON FUTURE EDITION 🔮
+// ============================================
+function initChristmasMode() {
+    if (!ENABLE_CHRISTMAS_MODE) return;
+
+    // Add Christmas mode class to body
+    document.body.classList.add('christmas-mode');
+
+    // Create Pixel Snow Container
+    const snowflakeContainer = document.createElement('div');
+    snowflakeContainer.id = 'snowflakes-container';
+    snowflakeContainer.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden;';
+    document.body.appendChild(snowflakeContainer);
+
+    // Create 20 pixel/soft snow particles
+    for (let i = 0; i < 20; i++) {
+        const snowflake = document.createElement('div');
+        // Alternate between pixel, plus, and soft styles
+        const styles = ['', 'pixel-plus', 'soft'];
+        snowflake.className = 'snowflake ' + styles[i % 3];
+        snowflakeContainer.appendChild(snowflake);
+    }
+
+    // Create Linear Neon Lights (single bar, no bulbs)
+    const lightsContainer = document.createElement('div');
+    lightsContainer.className = 'christmas-lights';
+    document.body.appendChild(lightsContainer);
+
+    // Create Vertical Neon Accent Lines
+    const neonLineLeft = document.createElement('div');
+    neonLineLeft.className = 'neon-line-left';
+    document.body.appendChild(neonLineLeft);
+
+    const neonLineRight = document.createElement('div');
+    neonLineRight.className = 'neon-line-right';
+    document.body.appendChild(neonLineRight);
+
+    // Create Geometric Stars
+    const star1 = document.createElement('div');
+    star1.className = 'geometric-star';
+    star1.innerHTML = '<div class="geometric-star-inner"></div>';
+    document.body.appendChild(star1);
+
+    const star2 = document.createElement('div');
+    star2.className = 'geometric-star-2';
+    document.body.appendChild(star2);
+
+    // Create Neon Sparkles (geometric)
+    function createNeonSparkle() {
+        if (!ENABLE_CHRISTMAS_MODE) return;
+
+        const sparkle = document.createElement('div');
+        sparkle.className = Math.random() > 0.5 ? 'sparkle' : 'sparkle-diamond';
+        sparkle.style.left = (5 + Math.random() * 90) + '%';
+        sparkle.style.top = (15 + Math.random() * 70) + '%';
+        sparkle.style.animationDelay = Math.random() * 1.5 + 's';
+
+        // Vary size
+        const size = 6 + Math.random() * 6;
+        sparkle.style.width = size + 'px';
+        sparkle.style.height = size + 'px';
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+            if (document.body.contains(sparkle)) {
+                document.body.removeChild(sparkle);
+            }
+        }, 3000);
+    }
+
+    // Add sparkles periodically
+    setInterval(createNeonSparkle, 2000);
+
+    // Initial sparkles
+    for (let i = 0; i < 6; i++) {
+        setTimeout(createNeonSparkle, i * 400);
+    }
+
+    // Create Holiday Mode Banner (cyberpunk style)
+    const holidayBanner = document.createElement('div');
+    holidayBanner.className = 'holiday-banner';
+    holidayBanner.id = 'holidayBanner';
+    holidayBanner.innerHTML = `
+        <div class="holiday-icon"><i class="fas fa-bolt"></i></div>
+        <span class="holiday-text">// HOLIDAY_2085</span>
+        <div class="holiday-dot"></div>
+    `;
+    document.body.appendChild(holidayBanner);
+
+    console.log('🔮 Christmas 2085 Neon Mode Activated! 🔮');
+}
+
 // Initialize
 window.addEventListener('DOMContentLoaded', () => {
     // Shared initializations
     document.body.style.opacity = '1';
+
+    // Initialize Christmas Mode
+    initChristmasMode();
 
     // Page specific logic
     if (isDetailsPage) {
@@ -284,7 +438,7 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
         // Index page logic
         const typingTitle = document.getElementById('typingTitle');
-        if (typingTitle) typeWriter(typingTitle, 'Flutter Developer', 100);
+        if (typingTitle) typeWriter(typingTitle, 'OnFiNtY', 100);
         renderProjects();
     }
 
@@ -329,19 +483,73 @@ if (mobileMenu && nav) {
     });
 }
 
-// Music Player (Common)
+// Music Player with State Persistence (Common)
 const musicBtn = document.getElementById('musicBtn');
 const bgMusic = document.getElementById('bgMusic');
 let isPlaying = false;
 
+// Save music state to localStorage
+function saveMusicState() {
+    if (bgMusic) {
+        localStorage.setItem('musicPlaying', isPlaying);
+        localStorage.setItem('musicTime', bgMusic.currentTime);
+        localStorage.setItem('musicVolume', bgMusic.volume);
+    }
+}
+
+// Restore music state from localStorage
+function restoreMusicState() {
+    if (!bgMusic) return;
+
+    const wasPlaying = localStorage.getItem('musicPlaying') === 'true';
+    const savedTime = parseFloat(localStorage.getItem('musicTime')) || 0;
+    const savedVolume = parseFloat(localStorage.getItem('musicVolume')) || 0.5;
+
+    // Restore volume
+    bgMusic.volume = savedVolume;
+
+    // Restore playback position
+    if (savedTime > 0) {
+        bgMusic.currentTime = savedTime;
+    }
+
+    // Auto-resume if music was playing
+    if (wasPlaying) {
+        const playPromise = bgMusic.play();
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                musicBtn.classList.add('playing');
+                isPlaying = true;
+                // Show holiday banner
+                const holidayBanner = document.getElementById('holidayBanner');
+                if (holidayBanner) holidayBanner.classList.add('visible');
+            })
+                .catch(error => {
+                    console.log('Auto-play failed (browser may require user interaction):', error);
+                    // Reset state if auto-play fails
+                    isPlaying = false;
+                    localStorage.setItem('musicPlaying', false);
+                });
+        }
+    }
+}
+
 if (musicBtn && bgMusic) {
-    bgMusic.volume = 0.5;
+    // Restore state on page load
+    restoreMusicState();
+
+    // Toggle play/pause
     musicBtn.addEventListener('click', () => {
         if (isPlaying) {
             bgMusic.pause();
             musicBtn.innerHTML = '<i class="fas fa-music"></i>';
             musicBtn.classList.remove('playing');
             isPlaying = false;
+            saveMusicState();
+            // Hide holiday banner
+            const holidayBanner = document.getElementById('holidayBanner');
+            if (holidayBanner) holidayBanner.classList.remove('visible');
         } else {
             const playPromise = bgMusic.play();
             if (playPromise !== undefined) {
@@ -349,12 +557,28 @@ if (musicBtn && bgMusic) {
                     musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
                     musicBtn.classList.add('playing');
                     isPlaying = true;
+                    saveMusicState();
+                    // Show holiday banner
+                    const holidayBanner = document.getElementById('holidayBanner');
+                    if (holidayBanner) holidayBanner.classList.add('visible');
                 })
                     .catch(error => {
                         console.log('Audio play failed:', error);
                     });
             }
         }
+    });
+
+    // Save current time periodically while playing
+    bgMusic.addEventListener('timeupdate', () => {
+        if (isPlaying) {
+            saveMusicState();
+        }
+    });
+
+    // Save state before leaving the page
+    window.addEventListener('beforeunload', () => {
+        saveMusicState();
     });
 }
 
