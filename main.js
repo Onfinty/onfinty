@@ -137,7 +137,7 @@ const projects = [
             { url: "assets/light2.png", desc: "Light Mode - Fresh and Friendly" },
             { url: "assets/glass2.png", desc: "Glassmorphism - The Premium Experience" }
         ],
-        link: "https://github.com/Onfinty"
+        link: ""
     }
 ];
 
@@ -855,3 +855,4 @@ function confettiEffect() {
         setTimeout(() => conf.remove(), 1000);
     }
 }
+
