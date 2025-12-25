@@ -485,6 +485,7 @@ if (mobileMenu && nav) {
 
 // Music Player with State Persistence (Common)
 const musicBtn = document.getElementById('musicBtn');
+const headerMusicBtn = document.getElementById('headerMusicBtn');
 const bgMusic = document.getElementById('bgMusic');
 let isPlaying = false;
 
@@ -494,6 +495,31 @@ function saveMusicState() {
         localStorage.setItem('musicPlaying', isPlaying);
         localStorage.setItem('musicTime', bgMusic.currentTime);
         localStorage.setItem('musicVolume', bgMusic.volume);
+    }
+}
+
+// Update UI elements for music state
+function updateMusicUI(playing) {
+    isPlaying = playing;
+    const playIcon = '<i class="fas fa-pause"></i>';
+    const pauseIcon = '<i class="fas fa-music"></i>';
+
+    // Update Floating Button
+    if (musicBtn) {
+        musicBtn.innerHTML = playing ? playIcon : pauseIcon;
+        musicBtn.classList.toggle('playing', playing);
+    }
+
+    // Update Header Visualizer (now a simple icon)
+    if (headerMusicBtn) {
+        headerMusicBtn.innerHTML = playing ? playIcon : pauseIcon;
+        headerMusicBtn.classList.toggle('playing', playing);
+    }
+
+    // Show/Hide holiday banner
+    const holidayBanner = document.getElementById('holidayBanner');
+    if (holidayBanner) {
+        holidayBanner.classList.toggle('visible', playing);
     }
 }
 
@@ -518,56 +544,52 @@ function restoreMusicState() {
         const playPromise = bgMusic.play();
         if (playPromise !== undefined) {
             playPromise.then(_ => {
-                musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                musicBtn.classList.add('playing');
-                isPlaying = true;
-                // Show holiday banner
-                const holidayBanner = document.getElementById('holidayBanner');
-                if (holidayBanner) holidayBanner.classList.add('visible');
+                updateMusicUI(true);
             })
                 .catch(error => {
                     console.log('Auto-play failed (browser may require user interaction):', error);
                     // Reset state if auto-play fails
-                    isPlaying = false;
+                    updateMusicUI(false);
                     localStorage.setItem('musicPlaying', false);
                 });
         }
     }
 }
 
-if (musicBtn && bgMusic) {
+// Global Music Toggle Logic
+function toggleMusic() {
+    if (!bgMusic) return;
+
+    if (isPlaying) {
+        bgMusic.pause();
+        updateMusicUI(false);
+        saveMusicState();
+    } else {
+        const playPromise = bgMusic.play();
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                updateMusicUI(true);
+                saveMusicState();
+            })
+                .catch(error => {
+                    console.log('Audio play failed:', error);
+                });
+        }
+    }
+}
+
+// Event Listeners
+if (bgMusic) {
     // Restore state on page load
     restoreMusicState();
 
-    // Toggle play/pause
-    musicBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            bgMusic.pause();
-            musicBtn.innerHTML = '<i class="fas fa-music"></i>';
-            musicBtn.classList.remove('playing');
-            isPlaying = false;
-            saveMusicState();
-            // Hide holiday banner
-            const holidayBanner = document.getElementById('holidayBanner');
-            if (holidayBanner) holidayBanner.classList.remove('visible');
-        } else {
-            const playPromise = bgMusic.play();
-            if (playPromise !== undefined) {
-                playPromise.then(_ => {
-                    musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                    musicBtn.classList.add('playing');
-                    isPlaying = true;
-                    saveMusicState();
-                    // Show holiday banner
-                    const holidayBanner = document.getElementById('holidayBanner');
-                    if (holidayBanner) holidayBanner.classList.add('visible');
-                })
-                    .catch(error => {
-                        console.log('Audio play failed:', error);
-                    });
-            }
-        }
-    });
+    if (musicBtn) {
+        musicBtn.addEventListener('click', toggleMusic);
+    }
+
+    if (headerMusicBtn) {
+        headerMusicBtn.addEventListener('click', toggleMusic);
+    }
 
     // Save current time periodically while playing
     bgMusic.addEventListener('timeupdate', () => {

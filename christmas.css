@@ -19,6 +19,11 @@
 /* ============================================
    CYBERPUNK ATMOSPHERE
    ============================================ */
+body.christmas-mode {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 body.christmas-mode::before {
     content: '';
     position: fixed;
@@ -794,20 +799,12 @@ body.christmas-mode .hero::before {
     }
 
     .holiday-banner {
-        bottom: 100px;
-        right: 10px;
-        font-size: 9px;
-        padding: 8px 12px;
+        display: none !important;
     }
 }
 
 @media (max-width: 480px) {
     .geometric-star {
         display: none;
-    }
-
-    .holiday-banner {
-        right: 5px;
-        bottom: 90px;
     }
 }

@@ -35,6 +35,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -43,6 +44,7 @@ body {
     color: var(--text-white);
     line-height: 1.6;
     overflow-x: hidden;
+    max-width: 100vw;
 }
 
 /* Animated Background */
@@ -867,31 +869,68 @@ header.scrolled {
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-violet);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    /* Prevent any layout shift */
+    flex-shrink: 0;
 }
 
 .music-btn:hover {
-    transform: scale(1.15);
     box-shadow: 0 10px 40px rgba(139, 92, 246, 0.6);
 }
 
 .music-btn.playing {
-    animation: pulse-music 1.5s infinite;
+    animation: pulse-glow-ring 1.5s ease-in-out infinite;
 }
 
-@keyframes pulse-music {
+/* Non-scaling pulse - only glows outward */
+@keyframes pulse-glow-ring {
 
     0%,
     100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+        box-shadow:
+            var(--shadow-violet),
+            0 0 0 0 rgba(139, 92, 246, 0.4);
     }
 
     50% {
-        transform: scale(1.08);
-        box-shadow: 0 0 0 20px rgba(139, 92, 246, 0);
+        box-shadow:
+            var(--shadow-violet),
+            0 0 0 12px rgba(139, 92, 246, 0);
     }
 }
+
+/* Header Music Control (Mobile/Tablet) */
+.header-music {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid var(--border-violet);
+    color: var(--primary-violet);
+    font-size: 1.1rem;
+}
+
+.header-music:hover {
+    background: rgba(139, 92, 246, 0.2);
+    box-shadow: var(--glow-violet);
+}
+
+.header-music.playing {
+    color: var(--secondary-violet);
+    border-color: var(--primary-violet);
+    background: rgba(139, 92, 246, 0.15);
+}
+
+.header-music * {
+    animation: none !important;
+    transform: none !important;
+}
+
 
 /* Footer */
 footer {
@@ -1148,16 +1187,13 @@ footer {
         font-size: 1.6rem;
     }
 
-    /* Music Player Mobile */
+    /* Music Player Mobile - Hidden, replaced by header icon */
     .music-player {
-        bottom: 25px;
-        right: 25px;
+        display: none;
     }
 
-    .music-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 1.4rem;
+    .header-music {
+        display: flex;
     }
 
     /* Particles Mobile */
@@ -1199,6 +1235,19 @@ footer {
     .project-content {
         padding: 1.8rem;
     }
+
+    /* Even smaller music button for tiny screens */
+    .music-player {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .music-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        border-width: 1px;
+    }
 }
 
 /* Tablet Landscape */
@@ -1211,6 +1260,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 /* Project Details Page Styles */
 .hero-small {
     min-height: 40vh;
@@ -1315,7 +1365,7 @@ footer {
 .call-to-action {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
     border-radius: 30px;
     border: 1px solid var(--border-violet);
 }
@@ -1487,15 +1537,16 @@ footer {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .technical-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .design-card {
         padding: 2rem;
     }
 }
+
 /* Start Project CTA */
 .cta-wrapper {
     background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
@@ -1615,8 +1666,15 @@ footer {
 }
 
 @keyframes fadeEffect {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .step-title {
@@ -1685,14 +1743,14 @@ footer {
 }
 
 /* Selection State */
-.card-option input:checked + .card-content {
+.card-option input:checked+.card-content {
     border-color: var(--primary-violet);
     background: rgba(139, 92, 246, 0.05);
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
     transform: translateY(-5px);
 }
 
-.card-option input:checked + .card-content .card-icon {
+.card-option input:checked+.card-content .card-icon {
     color: var(--primary-violet);
     transform: scale(1.1);
 }
@@ -1780,9 +1838,19 @@ footer {
 }
 
 @keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    80% { transform: scale(1.2); }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .success-message h3 {
@@ -1817,11 +1885,11 @@ footer {
     .card-options-grid.three-col {
         grid-template-columns: 1fr;
     }
-    
+
     .form-wrapper {
         padding: 2rem 1.5rem;
     }
-    
+
     .step-title {
         font-size: 1.5rem;
     }
