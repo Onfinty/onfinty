@@ -48,56 +48,69 @@
         </div>
     </header>
 
-    <!-- Project Hero -->
-    <section class="section hero-small">
-        <div class="container" style="padding-top: 8rem;">
-            <div class="section-header fade-in">
-                <div class="section-tag" id="detailCategory">CATEGORY</div>
-                <h1 class="section-title" id="detailTitle">Project Title</h1>
-                <div class="project-tech" id="detailTech" style="justify-content: center;">
-                    <!-- Tech tags loaded dynamically -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Details Content -->
-    <section class="section" id="project-details">
+    <!-- Project Hero (Redesigned) -->
+    <section class="hero-project">
         <div class="container">
-
-            <!-- Long Description & Features -->
-            <div class="project-details-grid">
-                <div class="details-content fade-in">
-                    <h3>About the Project</h3>
-                    <p id="detailDescription" class="text-lg">
-                        Loading project details...
-                    </p>
-
+            <div class="hero-project-grid">
+                <div class="hero-project-content fade-in">
+                    <span class="text-label" id="detailCategory">Category</span>
+                    <h1 class="typing-title" id="detailTitle" style="font-size: 3.5rem; margin-bottom: 1.5rem;">Project
+                        Title</h1>
+                    <div class="project-tech" id="detailTech">
+                        <!-- Tech tags loaded dynamically -->
+                    </div>
                     <div style="margin-top: 2.5rem;">
                         <a href="#" id="externalLink" target="_blank" class="btn btn-primary">
                             <i class="fab fa-github"></i> View Source / Live Demo
                         </a>
                     </div>
                 </div>
+                <div class="hero-project-visual fade-in" id="projectVisual">
+                    <!-- Image or Icon loaded dynamically -->
+                    <div class="hero-project-visual no-image">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="details-features fade-in">
-                    <h3>Key Features</h3>
+    <!-- Project Details Content (Bento Grid) -->
+    <section class="section" id="project-details" style="padding-top: 0;">
+        <div class="container">
+
+            <!-- Bento Grid Layout -->
+            <div class="project-bento-grid">
+
+                <!-- About Section -->
+                <div class="bento-item bento-about fade-in">
+                    <span class="text-label">Overview</span>
+                    <p id="detailDescription" class="text-body-large">
+                        Loading project details...
+                    </p>
+                </div>
+
+                <!-- Features Section (Moved inside Bento for better flow) -->
+                <div class="bento-item bento-tech fade-in">
+                    <span class="text-label">Key Highlights</span>
                     <ul class="features-list" id="featuresList">
                         <!-- Features loaded dynamically -->
                     </ul>
                 </div>
+
             </div>
+
             <!-- Design Breakdown Section -->
-            <div class="design-breakdown-section">
-                <h3 class="section-title-small fade-in">The Three Musketeers of Login Design</h3>
+            <div class="design-breakdown-section" style="margin-bottom: 5rem;">
+                <h3 class="section-title-small fade-in">The Design Process</h3>
                 <div class="design-cards-grid" id="designCardsGrid">
                     <!-- Loaded dynamically -->
                 </div>
             </div>
 
             <!-- Technical Deep Dive -->
-            <div class="technical-section">
-                <h3 class="section-title-small fade-in">Under The Hood</h3>
+            <div class="technical-section" style="margin-bottom: 5rem;">
+                <h3 class="section-title-small fade-in">Technical Architecture</h3>
                 <div class="technical-grid" id="technicalGrid">
                     <!-- Loaded dynamically -->
                 </div>
@@ -105,7 +118,7 @@
 
             <!-- Image Gallery -->
             <div class="gallery-section">
-                <h3 class="section-title-small fade-in">Visual Tour</h3>
+                <h3 class="section-title-small fade-in">Visual Showcase</h3>
                 <div class="gallery-grid" id="galleryGrid">
                     <!-- Images loaded dynamically -->
                 </div>

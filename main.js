@@ -11,6 +11,7 @@ const projects = [
         icon: '<i class="fas fa-layer-group"></i>',
         category: "UI/UX DESIGN SHOWCASE",
         title: "Triple Threat Auth Kit",
+        externalImage: "",
         description: "Six spectacular authentication screens from 'The Triple Threat Auth Kit' - where logging in meets luxury. Three themes, six screens, infinite style.",
         longDescription: "Welcome to The Triple Threat Auth Kit - not your grandma's login forms (unless she's incredibly cool). This collection of 6 production-ready Flutter screens features three distinct design philosophies: Dark Mode (for the mysterious types), Light Mode (for the optimists), and Glassmorphism (for the show-offs). Each theme comes with both a sleek login screen and its trusty signup companion. Built with Flutter's most powerful animation libraries and enough visual polish to make designers cry happy tears. Whether you're building the next big SaaS, a crypto wallet that needs to look expensive, or just want authentication screens that spark joy, this kit has you covered. It's like getting three complete UI kits in one - because why settle for boring when you can have spectacular?",
         features: [
@@ -138,7 +139,8 @@ const projects = [
             { url: "assets/glass2.png", desc: "Glassmorphism - The Premium Experience" }
         ],
         link: "https://github.com/Onfinty"
-    }
+    },
+
 ];
 
 
@@ -152,16 +154,19 @@ function renderProjects() {
     if (!grid) return; // Exit if not on index page
 
     grid.innerHTML = projects.map((project, index) => `
-        <div class="project-card fade-in" style="transition-delay: ${index * 0.1}s">
+        <div class="project-card fade-in ${project.externalImage ? 'has-image' : ''}" style="transition-delay: ${index * 0.1}s">
             <div class="project-image">
-                ${project.icon}
+                ${project.externalImage ?
+            `<div class="blur-bg" style="background-image: url('${project.externalImage}');"></div>
+                     <img src="${project.externalImage}" alt="${project.title}" loading="lazy" class="main-img loading" onload="this.classList.add('loaded');">`
+            : project.icon}
             </div>
             <div class="project-content">
                 <p class="project-category">${project.category}</p>
                 <h3 class="project-title">${project.title}</h3>
                 <p class="project-description">${project.description}</p>
                 <div class="project-tech">
-                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    ${project.technologies.slice(0, 4).map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                 </div>
                 <a href="project-details.html?id=${project.id}" class="project-link">
                     View Details <i class="fas fa-arrow-right"></i>
@@ -209,6 +214,21 @@ function loadProjectDetails() {
     if (descEl) descEl.innerText = project.longDescription;
     if (externalLinkEl) externalLinkEl.href = project.link;
 
+    // Handle Hero Visual (Image or Icon)
+    const visualEl = document.getElementById('projectVisual');
+    if (visualEl) {
+        if (project.externalImage) {
+            visualEl.innerHTML = `
+                <div class="blur-bg" style="background-image: url('${project.externalImage}');"></div>
+                <img src="${project.externalImage}" alt="${project.title}" class="main-img loading" onload="this.classList.add('loaded');">
+            `;
+            visualEl.classList.remove('no-image');
+        } else {
+            visualEl.innerHTML = project.icon;
+            visualEl.classList.add('no-image');
+        }
+    }
+
     if (techStackEl) {
         techStackEl.innerHTML = project.technologies.map(tech =>
             `<span class="tech-tag">${tech}</span>`
@@ -228,7 +248,8 @@ function loadProjectDetails() {
     if (galleryGrid) {
         galleryGrid.innerHTML = project.images.map((img, idx) => `
             <div class="gallery-item fade-in" style="transition-delay: ${idx * 0.15}s">
-                <img src="${img.url}" alt="${img.desc}" loading="lazy">
+                <div class="img-placeholder" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                <img src="${img.url}" alt="${img.desc}" loading="lazy" class="loading" style="position:relative; z-index:2;" onload="this.classList.add('loaded'); this.previousElementSibling.style.display='none';">
                 <p class="image-caption">${img.desc}</p>
             </div>
         `).join('');

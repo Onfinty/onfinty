@@ -1894,3 +1894,248 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+/* =========================================
+   PROJECT DETAILS REDESIGN & IMG OPTIMIZATION
+   ========================================= */
+
+/* Image Loading Optimization */
+img.loading {
+    filter: blur(20px);
+    opacity: 0;
+    transition: filter 0.5s ease, opacity 0.5s ease;
+}
+
+img.loaded {
+    filter: blur(0);
+    opacity: 1;
+}
+
+.img-placeholder {
+    background: linear-gradient(90deg, #1a1a1a 0%, #242424 50%, #1a1a1a 100%);
+    background-size: 200% 100%;
+    animation: loading shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Enhanced Project Card (External Image Support) */
+/* Enhanced Project Card (External Image Support) */
+.project-card.has-image .project-image {
+    padding: 0;
+    background: var(--bg-card);
+    /* Reset default gradient */
+    position: relative;
+    /* Ensure it's a positioning context */
+    overflow: hidden;
+}
+
+.project-card.has-image .project-image .blur-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px) brightness(0.6);
+    z-index: 1;
+    transform: scale(1.1);
+}
+
+.project-card.has-image .project-image img.main-img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Use contain instead of cover for full view */
+    transition: transform 0.5s ease;
+}
+
+.project-card.has-image:hover .project-image img.main-img {
+    transform: scale(1.05);
+}
+
+/* Project Details Hero - Advanced */
+.hero-project {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+}
+
+.hero-project::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+}
+
+.hero-project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-project-content {
+    z-index: 2;
+}
+
+.hero-project-visual {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-violet);
+    aspect-ratio: 16 / 9;
+    background: var(--bg-card);
+}
+
+.hero-project-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-project-visual.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-violet);
+    font-size: 4rem;
+    color: white;
+}
+
+/* Bento Grid Layout for Details Page */
+.project-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.bento-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bento-item:hover {
+    border-color: var(--primary-violet);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-violet);
+}
+
+/* Grid Areas */
+.bento-about {
+    grid-column: span 12;
+}
+
+.bento-tech {
+    grid-column: span 12;
+    background: rgba(139, 92, 246, 0.03);
+}
+
+.bento-features {
+    grid-column: span 12;
+}
+
+/* Typography Enhancements for Details */
+.text-label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--secondary-violet);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.text-body-large {
+    font-size: 1.15rem;
+    /* Larger font for readability */
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* External Image with Blurred Background */
+.hero-project-visual .blur-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px) brightness(0.6);
+    z-index: 0;
+    transform: scale(1.1);
+    /* Prevent blur edges showing */
+}
+
+.hero-project-visual img.main-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Advanced Features List */
+.features-grid-advanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card-adv {
+    padding: 1.5rem;
+    background: var(--bg-dark);
+    border-radius: 16px;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.feature-icon-adv {
+    min-width: 40px;
+    height: 40px;
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-violet);
+    font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-project-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
