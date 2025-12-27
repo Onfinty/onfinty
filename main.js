@@ -7,136 +7,163 @@ const ENABLE_CHRISTMAS_MODE = true;
 // Projects Data Configuration
 const projects = [
     {
-        id: "login-ui-trilogy",
-        icon: '<i class="fas fa-layer-group"></i>',
+        id: "onfinity-auth-kit",
+        icon: '<i class="fas fa-palette"></i>',
         category: "UI/UX DESIGN SHOWCASE",
-        title: "Triple Threat Auth Kit",
-        externalImage: "",
-        description: "Six spectacular authentication screens from 'The Triple Threat Auth Kit' - where logging in meets luxury. Three themes, six screens, infinite style.",
-        longDescription: "Welcome to The Triple Threat Auth Kit - not your grandma's login forms (unless she's incredibly cool). This collection of 6 production-ready Flutter screens features three distinct design philosophies: Dark Mode (for the mysterious types), Light Mode (for the optimists), and Glassmorphism (for the show-offs). Each theme comes with both a sleek login screen and its trusty signup companion. Built with Flutter's most powerful animation libraries and enough visual polish to make designers cry happy tears. Whether you're building the next big SaaS, a crypto wallet that needs to look expensive, or just want authentication screens that spark joy, this kit has you covered. It's like getting three complete UI kits in one - because why settle for boring when you can have spectacular?",
+        title: "OnFiNtY - Advanced Auth UI Kit",
+        externalImage: "assets/auth kit 1.png",
+        description: "Seven breathtaking themes, complete authentication flow, and glassmorphism everything. OnFiNtY isn't just an auth kit - it's a design system that makes logging in feel like luxury.",
+        longDescription: "Welcome to OnFiNtY - where authentication meets art. This isn't your average login form collection. This is a complete, production-ready authentication system with SEVEN stunning themes that you can switch between with literally two lines of code. Built with modern Flutter, powered by Riverpod, and animated with flutter_animate, OnFiNtY delivers a premium user experience from the welcome screen to the success celebration. Each theme - Cosmic, Ocean, Nature, Sunset, Royal, Midnight, and Minimal - comes with its own carefully crafted color palette, animated background with floating orbs, and glassmorphic UI elements that make every interaction feel premium. Whether you're building a fintech app that needs Royal gold elegance, a wellness platform that deserves Nature's earthy vibes, or a tech startup that wants Cosmic's purple mystique, OnFiNtY has you covered. Complete with smart form validation, smooth page transitions, responsive design, and enough visual polish to make your users say 'Wow!' - this is authentication, elevated.",
         features: [
-            "Three Complete Design Systems - Dark, Light, and Glassmorphic themes that actually look different",
-            "Six Full Screens - Login AND Signup for each theme (no half-measures here)",
-            "Buttery Smooth Animations - Using flutter_animate because janky is not in our vocabulary",
-            "Pixel-Perfect Responsive Design - Looks stunning on everything from watches to tablets",
-            "Custom Reusable Components - Clean architecture that future-you will thank present-you for",
-            "Interactive Micro-Interactions - Focus states, hover effects, and feedback that feels good",
-            "Smart Form Validation - Password matching, email checking, and gentle error messages",
-            "Visual Depth Mastery - Gradients, shadows, glassmorphism, and enough blur to make your GPU sweat",
-            "Production-Ready Code - Clean, commented, scalable, and actually documented",
-            "The Triple Threat Auth Kit™ - Authentication has never looked this good"
+            "Seven Complete Themes - Cosmic, Ocean, Nature, Sunset, Royal, Midnight, and Minimal (switch with 2 lines of code)",
+            "Eight Full Authentication Screens - Welcome, Login, Register, Forgot Password, OTP, Reset Password, Success, and Error",
+            "Glassmorphism Everywhere - Frosted glass effects on buttons, cards, inputs, and containers",
+            "Animated Background System - Floating gradient orbs that move, scale, and create depth",
+            "Smart Form Validation - Email regex, password strength (8+ chars, uppercase, numbers), and name validation",
+            "Buttery Smooth Animations - Page transitions, button effects, and micro-interactions using flutter_animate",
+            "Responsive Design - ScreenUtil integration for pixel-perfect layouts across all devices",
+            "Modern Tech Stack - Riverpod state management, GoRouter navigation, Google Fonts (Outfit family)",
+            "Reusable Components - GlassButton, GlassCard, CustomTextField, AnimatedBackground, and GlassScaffold",
+            "Client Configuration System - Easy customization without touching the core code",
+            "Production-Ready Architecture - Clean folder structure, centralized theme management, separation of concerns",
+            "Dynamic Color Palettes - Each theme has 12+ custom colors including primary, secondary, accent, glass, and text colors"
         ],
         designs: [
             {
-                name: "🌑 Dark Mode Elegance",
-                file: "triple-threat-auth-kit/dark.dart",
-                description: "The Batman of login screens - sleek, sophisticated, and a little mysterious. This design embraces the dark side with a pure black background and crisp white accents. Features a minimalist approach where every pixel has a purpose. Basically, if Steve Jobs designed a login screen at 3am.",
+                name: "🌌 Cosmic Theme",
+                file: "",
+                description: "The original masterpiece. Purple and blue gradients meet dark cosmic vibes in a theme that screams 'tech startup meets space exploration.' This is what happens when you ask a designer to make something that feels both mysterious and trustworthy. Perfect for SaaS platforms, crypto apps, or any product that wants to feel cutting-edge.",
                 highlights: [
-                    "Pure Black (#121212) background for OLED perfection",
-                    "White-on-black high contrast that your optometrist would approve",
-                    "Subtle radial gradient that whispers sweet nothings",
-                    "Floating white button that practically begs to be clicked",
-                    "Inter font family for that 'I mean business' look",
-                    "Animated entrance effects that make users go 'ooh'",
-                    "Focus states that glow like a lightsaber (but classier)",
-                    "Perfect for: Late-night coding sessions, cybersecurity apps, and brooding dramatically"
+                    "Primary: Deep Purple (#6B4CFF) that commands attention without shouting",
+                    "Secondary: Rich Blue (#4C8DFF) for that tech-forward feel",
+                    "Background: Dark Cosmic (#0F0C29) gradient with purple and navy layers",
+                    "Accents: Cyan (#00D4FF) and Pink (#FF4C8D) for pops of energy",
+                    "Floating orbs in purple, blue, and cyan creating depth and movement",
+                    "Glass elements with subtle white borders and shadows",
+                    "White text with perfect contrast ratios for readability",
+                    "Perfect for: Tech startups, crypto wallets, AI platforms, developer tools"
                 ]
             },
             {
-                name: "☀️ Light Mode Delight",
-                file: "triple-threat-auth-kit/light.dart",
-                description: "The friendly neighborhood login screen that greets you with a smile and probably offers you cookies. Soft colors, rounded everything, and a general vibe of 'hey, come on in!' This is what happens when minimalism meets personality and they become best friends.",
+                name: "🌊 Ocean Theme",
+                file: "",
+                description: "Dive into serenity with deep teal and aqua blues that evoke calm, trust, and professionalism. This theme whispers 'we've got this handled' while making users feel like they're floating on tranquil waters. The deep ocean background gives it gravitas while the bright cyan accents keep it fresh.",
                 highlights: [
-                    "Soft off-white (#F8F9FD) that's easier on the eyes than morning sunlight",
-                    "Indigo accent color (#4F46E5) for that pop of 'I got this' confidence",
-                    "Super-rounded inputs (20px radius!) for maximum huggability",
-                    "Waving hand icon (👋) because who doesn't love a warm greeting?",
-                    "Social login buttons styled like fluffy clouds you want to poke",
-                    "Poppins font that says 'I'm modern but I'll still help you move apartments'",
-                    "Hover effects that lift elements like magic carpets on vacation",
-                    "Perfect for: Lifestyle apps, social platforms, and making your grandma say 'Oh, how nice!'"
+                    "Primary: Deep Cyan (#00B4D8) like tropical waters at noon",
+                    "Secondary: Ocean Blue (#0077B6) for depth and stability",
+                    "Background: Deep Ocean Dark (#021019) gradient - mysterious yet inviting",
+                    "Accents: Light Cyan (#90E0EF) and Sky Blue (#48CAE4) for sparkle",
+                    "Teal-bordered glass elements that feel like underwater windows",
+                    "Light cyan text (#E0F7FA) that's easy on the eyes",
+                    "Floating orbs creating an underwater ambient effect",
+                    "Perfect for: Healthcare apps, meditation platforms, financial services, travel booking"
                 ]
             },
             {
-                name: "✨ Glassmorphism Premium",
-                file: "triple-threat-auth-kit/glass.dart",
-                description: "The showstopper. The one that makes other login screens jealous at parties. This design uses glassmorphism (frosted glass effect) with glowing orbs and premium animations. It's like logging into a spaceship's control panel designed by Apple's design team, but actually user-friendly. Might cause jaw drops.",
+                name: "🌿 Nature Theme",
+                file: "",
+                description: "Earthy greens and forest vibes for apps that want to feel grounded, organic, and trustworthy. This isn't your aggressive neon green - it's sophisticated emerald and sage that whispers 'sustainability' and 'wellness' without trying too hard. Like a walk in a premium botanical garden.",
                 highlights: [
-                    "Frosted glass card with BackdropFilter blur (sigma 15 - yes, we're showing off)",
-                    "Ambient glowing orbs that float around like they own the place",
-                    "Multi-layer gradient background that creates more depth than a philosophy textbook",
-                    "Shimmer effect on buttons (yes, really - we went there)",
-                    "Password visibility toggle with smooth icon transitions that feel buttery",
-                    "Form validation with elegant error states (even errors look good here)",
-                    "Mock authentication with loading states that make waiting pleasant",
-                    "Perfect for: Premium apps, crypto wallets, impressing your tech lead, and showing off at conferences"
+                    "Primary: Forest Green (#2D6A4F) that feels both premium and natural",
+                    "Secondary: Emerald (#40916C) for growth and vitality",
+                    "Background: Deep Forest (#1B4332) gradient with layered greens",
+                    "Accents: Sage (#95D5B2) and Mint (#D8F3DC) for freshness",
+                    "Mint-colored text that's soothing and readable",
+                    "Glass elements with nature-inspired transparency",
+                    "Floating green orbs like fireflies in a forest",
+                    "Perfect for: Wellness apps, eco-friendly products, organic marketplaces, fitness platforms"
                 ]
             },
             {
-                name: "🌑 Dark Signup Companion",
-                file: "triple-threat-auth-kit/signup_dark.dart",
-                description: "The sophisticated sibling of Dark Mode Login. Where the login screen is 'Welcome back, friend,' this one is 'Hello there, future legend.' Four fields instead of two because good things take time. Same mysterious Batman vibes, now with extra commitment.",
+                name: "🌅 Sunset Theme",
+                file: "",
+                description: "Warm oranges, passionate reds, and golden accents that evoke energy, creativity, and boldness. This theme doesn't whisper - it confidently announces itself. Perfect for brands that want to stand out and make a statement. Think sunset over the desert meets modern luxury.",
                 highlights: [
-                    "All the dark elegance of its login twin, but longer (it's not you, it's the extra form fields)",
-                    "Four beautifully animated input fields: Name, Email, Password, Confirm Password",
-                    "Password matching validation that gently reminds you when you typo",
-                    "Same pure black aesthetic that makes night owls feel at home",
-                    "Smooth animations that distract you from the fact you're filling out a form",
-                    "Minimal design that says 'we respect your time but need your info'",
-                    "'Create Account' button that glows with entrepreneurial energy",
-                    "Perfect for: Building your empire, starting fresh, joining the dark side (we have cookies)"
+                    "Primary: Rose Pink (#E05780) with attitude and warmth",
+                    "Secondary: Deep Magenta (#D9376E) for intensity",
+                    "Background: Dark Burgundy (#25020F) gradient transitioning to warmer tones",
+                    "Accents: Orange (#FF9E00) and Golden Yellow (#FFBC42) like sunset rays",
+                    "Peachy text colors (#FFE5D9) that feel warm and inviting",
+                    "Glass elements with sunset-tinted borders",
+                    "Floating warm-colored orbs creating ambient glow",
+                    "Perfect for: Creative agencies, music apps, dating platforms, event management"
                 ]
             },
             {
-                name: "☀️ Light Signup Friend",
-                file: "triple-threat-auth-kit/signup_light.dart",
-                description: "The cheerful onboarding buddy that's practically throwing confetti while you type. If Light Mode Login is a friendly wave, this is a warm hug and a welcome gift basket. Four rounded input fields that look so friendly, they might send you birthday cards.",
+                name: "👑 Royal Theme",
+                file: "",
+                description: "Pure black, gold accents, and silver details. This is luxury distilled into pixels. The Royal theme doesn't ask for attention - it commands it. Gold borders on glass elements, dramatic shadows, and a color palette that screams 'premium' without saying a word. For apps that cater to the VIP crowd.",
                 highlights: [
-                    "Person-add icon instead of waving hand (it's recruitment time!)",
-                    "Same delightful pastel color palette that makes you feel good about yourself",
-                    "Four super-rounded fields with 20px corners (borderline circular, we're not judging)",
-                    "Indigo accent colors that scream confidence without actually screaming",
-                    "Smooth slide-in animations that feel like a gentle introduction",
-                    "Password confirmation field styled with the same cloud-like softness",
-                    "Validation messages delivered with a smile (metaphorically)",
-                    "Perfect for: Community apps, wellness platforms, anywhere people gather to be wholesome"
+                    "Primary: Pure Gold (#FFD700) - because subtlety is overrated",
+                    "Secondary: Polished Silver (#C0C0C0) for that metallic elegance",
+                    "Background: Pure Black (#000000) with subtle gray gradients",
+                    "Accents: Goldenrod (#DAA520) and Platinum (#E5E4E2)",
+                    "Gold-bordered glass elements that literally glow",
+                    "Gold shadows creating dramatic depth effects",
+                    "White text on black for maximum contrast and sophistication",
+                    "Perfect for: Luxury brands, VIP memberships, high-end e-commerce, exclusive clubs"
                 ]
             },
             {
-                name: "✨ Glass Signup Spectacular",
-                file: "triple-threat-auth-kit/signup_glass.dart",
-                description: "The crown jewel of the auth collection. The final boss of signup forms. This isn't just a registration page - it's a premium experience wrapped in frosted glass. Four fields, all the glassmorphism glory, and enough visual polish to make designers weep tears of joy. Comes with its own gravitational pull.",
+                name: "🌙 Midnight Theme",
+                file: "",
+                description: "Deep midnight blues meet silver accents in a theme that feels like 3 AM coding sessions but make it fashion. This is the theme for apps that want to feel professional, trustworthy, and just a little bit mysterious. Navy blues that CEOs would approve of, with enough visual interest to keep it modern.",
                 highlights: [
-                    "Person-add-outlined icon floating majestically like a registration deity",
-                    "Full glassmorphism treatment on a FOUR-FIELD form (we're ambitious)",
-                    "BackdropFilter blur that makes everything behind it look artsy",
-                    "Two password fields with individual visibility toggles (luxury!)",
-                    "Validation that checks if passwords match before you even think about it",
-                    "Shimmer effects on the submit button because why stop at good when you can be fabulous",
-                    "Glowing ambient orbs strategically placed to frame your data entry like a masterpiece",
-                    "Perfect for: SaaS platforms, fintech apps, NFT marketplaces, or anywhere you want users to feel like VIPs"
+                    "Primary: Midnight Blue (#191970) - classic and commanding",
+                    "Secondary: Dark Slate Blue (#483D8B) for depth",
+                    "Background: Almost Black (#050510) with navy and indigo layers",
+                    "Accents: Light Steel Blue (#B0C4DE) and Lavender (#E6E6FA)",
+                    "Ghost white text (#F8F8FF) with perfect readability",
+                    "Blue-tinted glass borders creating ethereal effects",
+                    "Floating blue orbs like stars in the night sky",
+                    "Perfect for: Corporate apps, legal services, consulting firms, professional networks"
+                ]
+            },
+            {
+                name: "⚫ Minimal Theme",
+                file: "",
+                description: "Black, white, and shades of gray. No nonsense, no distractions, just pure minimalist perfection. This theme is for apps that want to let their content shine. Clean lines, subtle shadows, and a monochromatic palette that works everywhere. The Swiss Army knife of themes.",
+                highlights: [
+                    "Primary: Pure White (#FFFFFF) on dark - clean and timeless",
+                    "Secondary: Medium Gray (#CCCCCC) for hierarchy",
+                    "Background: Dark Gray (#121212) with subtle gray gradients",
+                    "Accents: White and Gray (#808080) - simplicity at its finest",
+                    "Monochromatic glass elements with minimal borders",
+                    "White text with varying opacity for visual hierarchy",
+                    "Subtle floating orbs that don't compete for attention",
+                    "Perfect for: News apps, productivity tools, minimalist brands, content-focused platforms"
                 ]
             }
         ],
-        technologies: ["Flutter", "Dart", "flutter_animate", "flutter_screenutil", "Glassmorphism", "Material Design", "Google Fonts"],
+        technologies: [
+            "Flutter 3.x",
+            "Dart",
+            "flutter_riverpod",
+            "go_router",
+            "flutter_screenutil",
+            "google_fonts",
+            "flutter_animate",
+            "Material Design 3",
+            "Glassmorphism",
+            "BackdropFilter"
+        ],
         technicalDetails: [
-            "Responsive Design: Uses flutter_screenutil for consistent sizing across devices",
-            "Animation Library: flutter_animate for declarative, chainable animations",
-            "State Management: StatefulWidget with clean separation of concerns",
-            "Custom Widgets: Reusable components for consistency and maintainability",
-            "Typography: Google Fonts integration (Inter, Poppins, JetBrains Mono)",
-            "Color Theory: Carefully chosen palettes for each theme",
-            "Accessibility: High contrast ratios and proper focus indicators",
-            "Performance: Optimized animations with 60fps target"
+            "State Management: Riverpod 2.4.0+ for scalable, testable state handling",
+            "Navigation: GoRouter 12.0+ with declarative routing and deep linking support",
+            "Responsive Design: ScreenUtil 5.9.0+ ensuring consistent 375x812 design across all devices",
+            "Typography: Google Fonts (Outfit family) with 5 weight variations for perfect hierarchy",
+            "Animation Framework: flutter_animate 4.3.0+ for declarative, chainable animations",
+            "Theme System: Centralized color management with 7 complete palettes switching via config",
+            "Glassmorphism: BackdropFilter with 15 sigma blur and layered opacity effects",
+            "Form Validation: Regex-based email validation, 8+ char passwords with uppercase and number requirements",
+            "Architecture: Feature-based folder structure with core/features separation",
+            "Custom Widgets: 5 reusable components (GlassButton, GlassCard, CustomTextField, AnimatedBackground, GlassScaffold)",
+            "Background Animation: Multi-orb system with 5-9 second animation cycles and reverse repetition",
+            "Performance: Optimized blur effects and gradient rendering for 60fps animations"
         ],
         images: [
-            { url: "assets/dark.png", desc: "Dark Mode - The Minimalist Masterpiece" },
-            { url: "assets/light.png", desc: "Light Mode - Fresh and Friendly" },
-            { url: "assets/glass.png", desc: "Glassmorphism - The Premium Experience" },
-            // for the signup pages
-            { url: "assets/dark2.png", desc: "Dark Mode - The Minimalist Masterpiece" },
-            { url: "assets/light2.png", desc: "Light Mode - Fresh and Friendly" },
-            { url: "assets/glass2.png", desc: "Glassmorphism - The Premium Experience" }
+            { url: "assets/forgot password.png", desc: "Foreget password flow" },
+            { url: "assets/create account.png", desc: "Create account flow" },
         ],
         link: ""
     }
